@@ -4,49 +4,49 @@
 // Calculation settings
 #define B_CRIT_CHANCE               GEN_LATEST // Chances of a critical hit landing. See CalcCritChanceStage. Gen6+ chances guarantee that Farfetch'd and Sirfetch'd always get critical hits while holding a Leek and using high-crit ratio moves.
 #define B_CRIT_MULTIPLIER           GEN_LATEST // In Gen6+, critical hits multiply damage by 1.5 instead of 2.
-#define B_PARALYSIS_SPEED           GEN_LATEST // In Gen7+, Speed is decreased by 50% instead of 75%.
+#define B_PARALYSIS_SPEED           GEN_3      // In Gen7+, Speed is decreased by 50% instead of 75%.
 #define B_CONFUSION_SELF_DMG_CHANCE GEN_LATEST // In Gen7+, confusion has a 33.3% of self-damage, instead of 50%.
 #define B_MULTI_HIT_CHANCE          GEN_LATEST // In Gen5+, multi-hit moves have different %. See SetRandomMultiHitCounter for values.
 #define B_WHITEOUT_MONEY            GEN_LATEST // In Gen4+, the amount of money lost by losing a battle is determined by the amount of badges earned. Previously, it would cut the current money by half. (While this change was also in FRLG, for the sake of simplicity, setting this to GEN_3 will result in RSE behavior.)
-#define B_LIGHT_BALL_ATTACK_BOOST   GEN_LATEST // In Gen4+, Light Ball doubles the power of physical moves in addition to special moves.
+#define B_LIGHT_BALL_ATTACK_BOOST   GEN_4      // In Gen4+, Light Ball doubles the power of physical moves in addition to special moves.
 
 // Experience settings
-#define B_EXP_CATCH                 GEN_LATEST // In Gen6+, Pokémon get experience from catching.
-#define B_TRAINER_EXP_MULTIPLIER    GEN_LATEST // In Gen7+, trainer battles no longer give a 1.5 multiplier to EXP gain.
-#define B_SPLIT_EXP                 GEN_LATEST // In Gen6+, all participating mon get full experience.
+#define B_EXP_CATCH                 GEN_6      // In Gen6+, Pokémon get experience from catching.
+#define B_TRAINER_EXP_MULTIPLIER    GEN_4      // In Gen7+, trainer battles no longer give a 1.5 multiplier to EXP gain.
+#define B_SPLIT_EXP                 GEN_6      // In Gen6+, all participating mon get full experience.
 #define B_SCALED_EXP                GEN_LATEST // In Gen5 and Gen7+, experience is weighted by level difference.
-#define B_UNEVOLVED_EXP_MULTIPLIER  GEN_LATEST // In Gen6+, if the Pokémon is at or past the level where it would be able to evolve, but it has not, it gets a ~1.2 multiplier to EXP gain. Only applies to Pokémon with EVO_LEVEL method.
-#define B_LEVEL_UP_NOTIFICATION     GEN_LATEST // In Gen9+, if the Pokémon gets enough experience to level up multiple times, the message is only displayed once.
+#define B_UNEVOLVED_EXP_MULTIPLIER  GEN_6      // In Gen6+, if the Pokémon is at or past the level where it would be able to evolve, but it has not, it gets a ~1.2 multiplier to EXP gain. Only applies to Pokémon with EVO_LEVEL method.
+#define B_LEVEL_UP_NOTIFICATION     GEN_3      // In Gen9+, if the Pokémon gets enough experience to level up multiple times, the message is only displayed once.
 
 // Stat settings
-#define B_BADGE_BOOST               GEN_LATEST // In Gen4+, Gym Badges no longer boost a Pokémon's stats. (Gen2 does not include the additional boost to the type matching the gym the badge is from)
-#define B_FRIENDSHIP_BOOST          FALSE      // In LGPE only, all stats except HP are boosted up to 10% based on Friendship. Unlike B_BADGE_BOOST, these boosts are accounted when calculating base stats.
-#define B_MAX_LEVEL_EV_GAINS        GEN_LATEST // In Gen5+, Lv100 Pokémon can obtain Effort Values normally.
-#define B_RECALCULATE_STATS         GEN_LATEST // In Gen5+, the stats of the Pokémon who participate in battle are recalculated at the end of each battle.
+#define B_BADGE_BOOST               GEN_3      // In Gen4+, Gym Badges no longer boost a Pokémon's stats. (Gen2 does not include the additional boost to the type matching the gym the badge is from)
+#define B_FRIENDSHIP_BOOST          TRUE       // In LGPE only, all stats except HP are boosted up to 10% based on Friendship. Unlike B_BADGE_BOOST, these boosts are accounted when calculating base stats.
+#define B_MAX_LEVEL_EV_GAINS        GEN_5      // In Gen5+, Lv100 Pokémon can obtain Effort Values normally.
+#define B_RECALCULATE_STATS         GEN_5      // In Gen5+, the stats of the Pokémon who participate in battle are recalculated at the end of each battle.
 
 // Damage settings
-#define B_BURN_DAMAGE               GEN_LATEST // In Gen7+, burn damage is 1/16th of max HP instead of 1/8th. Also applies to Frostbite.
-#define B_BURN_FACADE_DMG           GEN_LATEST // In Gen6+, burn's effect of lowering the Attack stat no longer applies to Facade.
-#define B_BINDING_DAMAGE            GEN_LATEST // In Gen6+, binding damage is 1/8 of max HP instead of 1/16. (With Binding Band, 1/6 and 1/8 respectively.)
+#define B_BURN_DAMAGE               GEN_3      // In Gen7+, burn damage is 1/16th of max HP instead of 1/8th. Also applies to Frostbite.
+#define B_BURN_FACADE_DMG           GEN_6      // In Gen6+, burn's effect of lowering the Attack stat no longer applies to Facade.
+#define B_BINDING_DAMAGE            GEN_6      // In Gen6+, binding damage is 1/8 of max HP instead of 1/16. (With Binding Band, 1/6 and 1/8 respectively.)
 #define B_PSYWAVE_DMG               GEN_LATEST // Psywave's damage formula. See DoFixedDamageMoveCalc for details.
-#define B_PAYBACK_SWITCH_BOOST      GEN_LATEST // In Gen5+, if the opponent switches out, Payback's damage will no longer be doubled.
-#define B_HIDDEN_POWER_DMG          GEN_LATEST // In Gen6+, Hidden Power's base power was set to always be 60. Before, it was determined by the mon's IVs.
-#define B_ROUGH_SKIN_DMG            GEN_LATEST // In Gen4+, Rough Skin contact damage is 1/8th of max HP instead of 1/16th. This will also affect Iron Barbs.
-#define B_KNOCK_OFF_DMG             GEN_LATEST // In Gen6+, Knock Off deals 50% more damage when knocking off an item.
-#define B_SPORT_DMG_REDUCTION       GEN_LATEST // In Gen5+, Water/Mud Sport reduce Fire/Electric Damage by 67% instead of 50%.
-#define B_EXPLOSION_DEFENSE         GEN_LATEST // In Gen5+, Self-Destruct and Explosion don't halve the targets' defense.
-#define B_PARENTAL_BOND_DMG         GEN_LATEST // In Gen7+, Parental Bond's second hit does 25% of the initial hits damage. Before, it did 50%.
-#define B_MULTIPLE_TARGETS_DMG      GEN_LATEST // In Gen4+, damage dealt by moves that hit multiple targets at once is reduced to 75%. In Gen3, it was 50%, unless the move hit the entire field, in which case there was no reduction.
+#define B_PAYBACK_SWITCH_BOOST      GEN_4      // In Gen5+, if the opponent switches out, Payback's damage will no longer be doubled.
+#define B_HIDDEN_POWER_DMG          GEN_4      // In Gen6+, Hidden Power's base power was set to always be 60. Before, it was determined by the mon's IVs.
+#define B_ROUGH_SKIN_DMG            GEN_4      // In Gen4+, Rough Skin contact damage is 1/8th of max HP instead of 1/16th. This will also affect Iron Barbs.
+#define B_KNOCK_OFF_DMG             GEN_6      // In Gen6+, Knock Off deals 50% more damage when knocking off an item.
+#define B_SPORT_DMG_REDUCTION       GEN_3      // In Gen5+, Water/Mud Sport reduce Fire/Electric Damage by 67% instead of 50%.
+#define B_EXPLOSION_DEFENSE         GEN_3      // In Gen5+, Self-Destruct and Explosion don't halve the targets' defense.
+#define B_PARENTAL_BOND_DMG         GEN_6      // In Gen7+, Parental Bond's second hit does 25% of the initial hits damage. Before, it did 50%.
+#define B_MULTIPLE_TARGETS_DMG      GEN_3      // In Gen4+, damage dealt by moves that hit multiple targets at once is reduced to 75%. In Gen3, it was 50%, unless the move hit the entire field, in which case there was no reduction.
 
 // Type settings
-#define B_GHOSTS_ESCAPE             GEN_LATEST // In Gen6+, abilities like Shadow Tag or moves like Mean Look fail on Ghost-type Pokémon. They can also escape any Wild Battle.
-#define B_PARALYZE_ELECTRIC         GEN_LATEST // In Gen6+, Electric-type Pokémon can't be paralyzed.
-#define B_POWDER_GRASS              GEN_LATEST // In Gen6+, Grass-type Pokémon are immune to powder and spore moves.
-#define B_UPDATED_TYPE_MATCHUPS     GEN_LATEST // Updates Type matchups. src/data/types_info.h for details.
-#define B_PRANKSTER_DARK_TYPES      GEN_LATEST // In Gen7+, Prankster-elevated status moves do not affect Dark type Pokémon.
-#define B_SHEER_COLD_IMMUNITY       GEN_LATEST // In Gen7+, Ice-types are immune to Sheer Cold
-#define B_ROOST_PURE_FLYING         GEN_LATEST // In Gen5+, Roost makes pure Flying-types into Normal-type.
-#define B_STATUS_TYPE_IMMUNITY      GEN_LATEST // In Gen1, Pokémon were immune to paralysis/freeze/burn side effects of attacking moves, if they shared a type with the move.
+#define B_GHOSTS_ESCAPE             GEN_6      // In Gen6+, abilities like Shadow Tag or moves like Mean Look fail on Ghost-type Pokémon. They can also escape any Wild Battle.
+#define B_PARALYZE_ELECTRIC         GEN_3      // In Gen6+, Electric-type Pokémon can't be paralyzed.
+#define B_POWDER_GRASS              GEN_3      // In Gen6+, Grass-type Pokémon are immune to powder and spore moves.
+#define B_UPDATED_TYPE_MATCHUPS     GEN_6      // Updates Type matchups. src/data/types_info.h for details.
+#define B_PRANKSTER_DARK_TYPES      GEN_3      // In Gen7+, Prankster-elevated status moves do not affect Dark type Pokémon.
+#define B_SHEER_COLD_IMMUNITY       GEN_3      // In Gen7+, Ice-types are immune to Sheer Cold
+#define B_ROOST_PURE_FLYING         GEN_3      // In Gen5+, Roost makes pure Flying-types into Normal-type.
+#define B_STATUS_TYPE_IMMUNITY      GEN_3      // In Gen1, Pokémon were immune to paralysis/freeze/burn side effects of attacking moves, if they shared a type with the move.
 
 // Turn settings
 #define B_BINDING_TURNS             GEN_LATEST // In Gen5+, binding moves last for 4-5 turns instead of 2-5 turns. (With Grip Claw, 7 and 5 turns respectively.)
@@ -57,33 +57,33 @@
 #define B_SLEEP_TURNS               GEN_LATEST // In Gen5+, sleep lasts for 2-4 turns instead of 2-5 turns.
 #define B_TAUNT_TURNS               GEN_LATEST // In Gen5+, Taunt lasts 3 turns if the user acts before the target, or 4 turns if the target acted before the user. In Gen3, taunt lasts 2 turns and in Gen 4, 3-5 turns.
 #define B_SPORT_TURNS               GEN_LATEST // In Gen6+, Water/Mud Sport last 5 turns, even if the user switches out.
-#define B_MEGA_EVO_TURN_ORDER       GEN_LATEST // In Gen7, a Pokémon's Speed after Mega Evolution is used to determine turn order, not its Speed before.
+#define B_MEGA_EVO_TURN_ORDER       GEN_7      // In Gen7, a Pokémon's Speed after Mega Evolution is used to determine turn order, not its Speed before.
 #define B_RECALC_TURN_AFTER_ACTIONS GEN_LATEST // In Gen8+, switching/using a move affects the current turn's order of actions, better known as dynamic speed.
-#define B_FAINT_SWITCH_IN           GEN_LATEST // In Gen4+, sending out a new Pokémon after the previous one fainted happens at the end of the turn. Before, it would happen after each action.
+#define B_FAINT_SWITCH_IN           GEN_3      // In Gen4+, sending out a new Pokémon after the previous one fainted happens at the end of the turn. Before, it would happen after each action.
 
 // Move data settings
-#define B_UPDATED_MOVE_DATA         GEN_LATEST // Updates move data in gMovesInfo, including Power, Accuracy, PP, stat changes, targets and chances of secondary effects.
-#define B_UPDATED_MOVE_TYPES        GEN_LATEST // Updates move types.
-#define B_UPDATED_MOVE_FLAGS        GEN_LATEST // Updates move flags.
-#define B_PHYSICAL_SPECIAL_SPLIT    GEN_LATEST // In Gens1-3, the move's type determines if it will do physical or special damage. The split icon in the summary will reflect this.
-#define B_RECOIL_IF_MISS_DMG        GEN_LATEST // In Gen5+, Jump Kick and High Jump Kick will always do half of the user's max HP when missing.
-#define B_KLUTZ_FLING_INTERACTION   GEN_LATEST // In Gen5+, Pokémon with the Klutz ability can't use Fling.
-#define B_UPDATED_CONVERSION        GEN_LATEST // In Gen6+, Conversion changes the user's type to match their first move's. Before, it would choose a move at random.
-#define B_UPDATED_CONVERSION_2      GEN_LATEST // In Gen5+, Conversion 2 changes the user's type to a type that resists the last move used by the selected target. Before, it would consider the last move being successfully hit by. Additionally, Struggle is considered Normal type before Gen 5.
-#define B_PP_REDUCED_BY_SPITE       GEN_LATEST // In Gen4+, Spite reduces the foe's last move's PP by 4, instead of 2 to 5.
+#define B_UPDATED_MOVE_DATA         GEN_6      // Updates move data in gMovesInfo, including Power, Accuracy, PP, stat changes, targets and chances of secondary effects.
+#define B_UPDATED_MOVE_TYPES        GEN_6      // Updates move types.
+#define B_UPDATED_MOVE_FLAGS        GEN_6      // Updates move flags.
+#define B_PHYSICAL_SPECIAL_SPLIT    GEN_6      // In Gens1-3, the move's type determines if it will do physical or special damage. The split icon in the summary will reflect this.
+#define B_RECOIL_IF_MISS_DMG        GEN_4      // In Gen5+, Jump Kick and High Jump Kick will always do half of the user's max HP when missing.
+#define B_KLUTZ_FLING_INTERACTION   GEN_5      // In Gen5+, Pokémon with the Klutz ability can't use Fling.
+#define B_UPDATED_CONVERSION        GEN_6      // In Gen6+, Conversion changes the user's type to match their first move's. Before, it would choose a move at random.
+#define B_UPDATED_CONVERSION_2      GEN_3      // In Gen5+, Conversion 2 changes the user's type to a type that resists the last move used by the selected target. Before, it would consider the last move being successfully hit by. Additionally, Struggle is considered Normal type before Gen 5.
+#define B_PP_REDUCED_BY_SPITE       GEN_4      // In Gen4+, Spite reduces the foe's last move's PP by 4, instead of 2 to 5.
 #define B_EXTRAPOLATED_MOVE_FLAGS   TRUE       // Adds move flags to moves that they don't officially have but would likely have if they were in the latest core series game.
 #define B_HIDDEN_POWER_COUNTER      GEN_LATEST // Prior to Gen4, Counter and Mirror Coat treat Hidden Power as Physical regardless of type.
 #define B_MODERN_TRICK_CHOICE_LOCK  GEN_LATEST // In Gen5+, if a Choice Item is swapped for a Choice Item, the Trick/Switcheroo user can pick another move, and then they'll be locked into it.
-#define B_PROTECT_FAILURE_RATE      GEN_LATEST // In Gen5+, protect moves fails 1/3 of the time instead of 1/2
+#define B_PROTECT_FAILURE_RATE      GEN_6      // In Gen5+, protect moves fails 1/3 of the time instead of 1/2
 
 // Ability data settings
 #define B_UPDATED_ABILITY_DATA      GEN_LATEST // Affects flags
 
 // Move accuracy settings
-#define B_TOXIC_NEVER_MISS          GEN_LATEST // In Gen6+, if Toxic is used by a Poison-type Pokémon, it will never miss.
-#define B_MINIMIZE_DMG_ACC          GEN_LATEST // In Gen6+, moves that causes double damage to minimized Pokémon will also skip accuracy checks.
-#define B_BLIZZARD_HAIL             GEN_LATEST // In Gen4+, Blizzard bypasses accuracy checks if it's hailing.
-#define B_SHEER_COLD_ACC            GEN_LATEST // In Gen7+, Sheer Cold's base chance of hitting is reduced to 20% if the user isn't Ice-typed.
+#define B_TOXIC_NEVER_MISS          GEN_6      // In Gen6+, if Toxic is used by a Poison-type Pokémon, it will never miss.
+#define B_MINIMIZE_DMG_ACC          GEN_6      // In Gen6+, moves that causes double damage to minimized Pokémon will also skip accuracy checks.
+#define B_BLIZZARD_HAIL             GEN_4      // In Gen4+, Blizzard bypasses accuracy checks if it's hailing.
+#define B_SHEER_COLD_ACC            GEN_3      // In Gen7+, Sheer Cold's base chance of hitting is reduced to 20% if the user isn't Ice-typed.
 
 // Move stat change settings
 #define B_FELL_STINGER_STAT_RAISE   GEN_LATEST // In Gen7+, it raises Atk by 3 stages instead of 2 if it causes the target to faint.
@@ -104,8 +104,8 @@
 #define B_BATON_PASS_TRAPPING       GEN_LATEST // In Gen5+, Baton Pass does not keep trapping effects on other battlers when the user switches out.
 #define B_GLARE_GHOST               GEN_LATEST // In Gen4+, Glare can hit Ghost-type Pokémon normally.
 #define B_SKILL_SWAP                GEN_LATEST // In Gen4+, Skill Swap triggers switch-in abilities after use.
-#define B_BRICK_BREAK               GEN_LATEST // In Gen4+, you can destroy your own side's screens. In Gen 5+, screens are not removed if the target is immune.
-#define B_WISH_HP_SOURCE            GEN_LATEST // In Gen5+, Wish heals half of the user's max HP instead of the target's.
+#define B_BRICK_BREAK               GEN_5      // In Gen4+, you can destroy your own side's screens. In Gen 5+, screens are not removed if the target is immune.
+#define B_WISH_HP_SOURCE            GEN_3      // In Gen5+, Wish heals half of the user's max HP instead of the target's.
 #define B_RAMPAGE_CANCELLING        GEN_LATEST // In Gen5+, a failed Thrash, etc, will cancel except on its last turn.
 #define B_HEAL_BLOCKING             GEN_LATEST // In Gen5+, Heal Block prevents healing by Black Sludge, Leftovers, Shell Bell. Affected Pokémon will not consume held HP-restoring Berries or Berry Juice.
                                                // Draining abilities will not heal but will prevent damage. In Gen6+, Heal Block prevents the use of most HP-draining moves.
@@ -113,18 +113,18 @@
 #define B_METRONOME_MOVES           GEN_LATEST // This config will determine up to which generation will Metronome pull moves from.
 #define B_TELEPORT_BEHAVIOR         GEN_LATEST // In LGPE onwards (Gen8+ here), Teleport allows the user to swap out with another party member.
 #define B_BEAT_UP                   GEN_LATEST // In Gen5+, Beat Up uses a different formula to calculate its damage, and deals Dark-type damage. Prior to Gen 5, each hit also announces the party member's name.
-#define B_DARK_VOID_FAIL            GEN_LATEST // In Gen7+, only Darkrai can use Dark Void.
-#define B_HIT_THAW                  GEN_LATEST // In Gen6+, damaging moves that thaw the user will thaw the target. In Gen 3+, Fire-type moves thaw the target. In Gen 1-2, damaging moves that can burn will thaw the target, regardless if they can be burned or not.
-#define B_HEALING_WISH_SWITCH       GEN_LATEST // In Gen5+, the mon receiving Healing Wish is sent out at the end of the turn.
+#define B_DARK_VOID_FAIL            GEN_4      // In Gen7+, only Darkrai can use Dark Void.
+#define B_HIT_THAW                  GEN_6      // In Gen6+, damaging moves that thaw the user will thaw the target. In Gen 3+, Fire-type moves thaw the target. In Gen 1-2, damaging moves that can burn will thaw the target, regardless if they can be burned or not.
+#define B_HEALING_WISH_SWITCH       GEN_6      // In Gen5+, the mon receiving Healing Wish is sent out at the end of the turn.
                                                // Additionally, in gen8+ the Healing Wish's effect will be stored until the user switches into a statused or hurt mon.
-#define B_DEFOG_EFFECT_CLEARING     GEN_LATEST // In Gen5+, Defog does not lower Evasion of target behind Subsitute. In Gen6+, Defog clears Spikes, Toxic Spikes, Stealth Rock and Sticky Web from both sides. In Gen8+, Defog also clears active Terrain.
+#define B_DEFOG_EFFECT_CLEARING     GEN_6      // In Gen5+, Defog does not lower Evasion of target behind Subsitute. In Gen6+, Defog clears Spikes, Toxic Spikes, Stealth Rock and Sticky Web from both sides. In Gen8+, Defog also clears active Terrain.
 #define B_STOCKPILE_RAISES_DEFS     GEN_LATEST // In Gen4+, Stockpile also raises Defense and Sp. Defense stats. Once Spit Up / Swallow is used, these stat changes are lost.
 #define B_TRANSFORM_SEMI_INV_FAIL   GEN_LATEST // In Gen2+, Transform fails if the target is semi-invulnerable.
 #define B_TRANSFORM_TARGET_FAIL     GEN_LATEST // In Gen2+, Transform fails if the target is already transformed.
 #define B_TRANSFORM_USER_FAIL       GEN_LATEST // In Gen5+, Transform fails if the user is already transformed.
 #define B_TRANSFORM_SUBSTITUTE_FAIL GEN_LATEST // In Gen5+, Transform fails if the target is behind a Substitute.
 #define B_TRANSFORM_SHINY           GEN_LATEST // In Gen4+, Transform will copy the shiny state of the opponent instead of maintaining its own shiny state.
-#define B_TRANSFORM_FORM_CHANGES    GEN_LATEST // In Gen5+, Transformed Pokemon cannot change forms.
+#define B_TRANSFORM_FORM_CHANGES    GEN_3      // In Gen5+, Transformed Pokemon cannot change forms.
 #define B_WIDE_GUARD                GEN_LATEST // In Gen5 only, Wide Guard has a chance to fail if used consecutively.
 #define B_QUICK_GUARD               GEN_LATEST // In Gen5 only, Quick Guard has a chance to fail if used consecutively.
 #define B_IMPRISON                  GEN_LATEST // In Gen5+, Imprison doesn't fail if opposing pokemon don't have any moves the user knows.
@@ -133,14 +133,14 @@
 #define B_SKETCH_BANS               GEN_LATEST // In Gen9+, Sketch is unable to copy more moves than in previous generations.
 #define B_KNOCK_OFF_REMOVAL         GEN_LATEST // In Gen5+, Knock Off removes the foe's item instead of rendering it unusable.
 #define B_HEAL_BELL_SOUNDPROOF      GEN_LATEST // In Gen5, Heal Bell affects all mons with Soundproof.  In Gen6-8 it affects inactive mons, but not battlers. In Gen9 it always affects the user.
-#define B_CHARGE                    GEN_LATEST // In Gen9+, Charge status is lost regardless of the typing of the next move.
+#define B_CHARGE                    GEN_4      // In Gen9+, Charge status is lost regardless of the typing of the next move.
 #define B_POWDER_STATUS_HEAVY_RAIN  GEN_LATEST // In Gen7+, Powder doesn't damage the user of a Fire type move in heavy rain.
 #define B_AFTER_YOU_TURN_ORDER      GEN_LATEST // In Gen8+, After You doesn't fail if the turn order wouldn't change after use.
 #define B_QUASH_TURN_ORDER          GEN_LATEST // In Gen8+, Quash-affected battlers move according to speed order. Before Gen8, Quash-affected battlers move in the order they were affected by Quash.
-#define B_DESTINY_BOND_FAIL         GEN_LATEST // In Gen7+, Destiny Bond fails if used repeatedly.
-#define B_FORESIGHT_FAIL            GEN_LATEST // In Gen2 and Gen5+, Foresight fails if used against a target already under its effect.
-#define B_MIRACLE_EYE_FAIL          GEN_LATEST // In Gen5+, Miracle Eye fails if used against a target already under its effect.
-#define B_PURSUIT_TARGET            GEN_LATEST // In Gen4+, Pursuit attacks a switching opponent even if they weren't targeting them. Before Gen4, Pursuit only attacks a switching opponent that it originally targeted.
+#define B_DESTINY_BOND_FAIL         GEN_4      // In Gen7+, Destiny Bond fails if used repeatedly.
+#define B_FORESIGHT_FAIL            GEN_4      // In Gen2 and Gen5+, Foresight fails if used against a target already under its effect.
+#define B_MIRACLE_EYE_FAIL          GEN_4      // In Gen5+, Miracle Eye fails if used against a target already under its effect.
+#define B_PURSUIT_TARGET            GEN_4      // In Gen4+, Pursuit attacks a switching opponent even if they weren't targeting them. Before Gen4, Pursuit only attacks a switching opponent that it originally targeted.
 #define B_SKIP_RECHARGE             GEN_LATEST // In Gen1, recharging moves such as Hyper Beam skip the recharge if the target gets KO'd
 #define B_ENCORE_TARGET             GEN_LATEST // In Gen5+, encored moves are allowed to choose a target
 #define B_TIME_OF_DAY_HEALING_MOVES GEN_LATEST // In Gen2, Morning Sun, Moonlight, and Synthesis heal twice as much HP based off the time of day. Also changes how much they heal. Evening affects Moonlight.
@@ -148,7 +148,7 @@
 #define B_DREAM_EATER_LIQUID_OOZE   GEN_LATEST // In Gen5+, Dream Eater is affected by Liquid Ooze.
 #define B_DREAM_EATER_SUBSTITUTE    GEN_LATEST // In Gen5+, Dream Eater can successfully hit and drain from a Substitute.
 #define B_SNATCH                    GEN_LATEST // In Gen5+, Snatch no longer steals moves that were already stolen by another Pokémon's Snatch on the same turn.
-#define B_FOCUS_PUNCH_FAILURE       GEN_LATEST // To determine if Focus is lost, in Gen4-, check if the current move is Focus Punch.
+#define B_FOCUS_PUNCH_FAILURE       GEN_4      // To determine if Focus is lost, in Gen4-, check if the current move is Focus Punch.
                                                // In Gens 5-6, check if the selected move is Focus Punch.
                                                // In Gen7+, check if the current move and the selected move are Focus Punch.
                                                // Also in Gen4-, the check for Focus Punch fail will occur after effects like pp consumption and flinching while it happens before in Gen5+
@@ -184,10 +184,10 @@
 #define B_ABILITY_TRIGGER_CHANCE    GEN_LATEST // In Gen3, Shed Skin, Cute Charm, Flame Body, Static and Poison Point have a 1/3 chance to trigger. In Gen 4+ it's 30%.
                                                // In Gen3, Effect Spore has a 10% chance to sleep, poison or paralyze, with an equal chance.
                                                // In Gen4, it's 30%. In Gen5+ it has 11% to sleep, 9% chance to poison and 10% chance to paralyze.
-#define B_PICKUP_WILD               GEN_LATEST // In Gen9+, Pickup allows its user to pickup its own used item at the end of the turn in wild battles.
+#define B_PICKUP_WILD               GEN_9      // In Gen9+, Pickup allows its user to pickup its own used item at the end of the turn in wild battles.
 #define B_MAGIC_GUARD               GEN_LATEST // In Gen4 only, Magic Guard ignores immobilization caused by paralysis
 #define B_BATTLE_BOND               GEN_LATEST // In Gen9+, Battle Bond increases Atk, SpAtk and Speed by one stage, once per battle
-#define B_ATE_MULTIPLIER            GEN_LATEST // In Gen7+, -ate abilities (Aerilate, Galvanize, Normalize, Pixilate, Refrigerate) multiply damage by 1.2. Otherwise, it's 1.3, except Normalize which has no multiplier.
+#define B_ATE_MULTIPLIER            GEN_4      // In Gen7+, -ate abilities (Aerilate, Galvanize, Normalize, Pixilate, Refrigerate) multiply damage by 1.2. Otherwise, it's 1.3, except Normalize which has no multiplier.
 #define B_DEFIANT_STICKY_WEB        GEN_LATEST // In Gen9+, Defiant activates on Sticky Web regardless of who set it up. In Gen8, Defiant does not activate on Sticky Web set up by an ally after Court Change swaps its side.
 #define B_POWDER_OVERCOAT           GEN_LATEST // In Gen6+, Overcoat blocks powder and spore moves from affecting the user.
 #define B_INFILTRATOR_SUBSTITUTE    GEN_LATEST // In Gen6+, Infiltrator bypasses Substitute when using a move, excluding Transform and Sky Drop.
@@ -334,10 +334,10 @@
 #define B_HPBAR_COLOR_THRESHOLD             GEN_LATEST // In Gen 5+, HP bar color thresholds were changed to be based on the actual HP values instead of the pixel length of the HP bar, leading to more accurate HP bar colors.
 
 // Catching settings
-#define B_SEMI_INVULNERABLE_CATCH       GEN_LATEST // In Gen4+, you cannot throw a ball against a Pokemon that is in a semi-invulnerable state (dig/fly/etc)
+#define B_SEMI_INVULNERABLE_CATCH       GEN_4      // In Gen4+, you cannot throw a ball against a Pokemon that is in a semi-invulnerable state (dig/fly/etc)
 #define B_CATCHING_CHARM_BOOST          100        // % boost in Critical Capture odds if player has the Catching Charm.
 #define B_INCAPACITATED_CATCH_BONUS     GEN_LATEST // In Gen5+, the catch rate bonus for a mon with sleep or freeze is 2.5x. In Gen4 and below its only a 2x bonus.
-#define B_LOW_LEVEL_CATCH_BONUS         GEN_LATEST // In Gen8, a bonus is added to the catch rate if catching a mon lower than level 20. In Gen9, the bonus is only applied to mons lower than level 13.
+#define B_LOW_LEVEL_CATCH_BONUS         GEN_8      // In Gen8, a bonus is added to the catch rate if catching a mon lower than level 20. In Gen9, the bonus is only applied to mons lower than level 13.
 #define B_MISSING_BADGE_CATCH_MALUS     GEN_LATEST // In Gen9, a penalty is added to the catch rate if trying to catch a mon 5 levels above the current obedience level, based on the number of gym badges obtained.
 #define B_CRITICAL_CAPTURE              TRUE       // If set to TRUE, Critical Capture will be enabled.
 #define B_CRITICAL_CAPTURE_LOCAL_DEX    TRUE       // If set to FALSE, Critical Capture % is based off of the National Pokedex estimated by enabled generations.
@@ -350,20 +350,20 @@
 #define B_CATCH_SWAP_CHECK_HMS      TRUE       // If TRUE, the catch swap feature above will prevent returning mons to the box if they know HMs.
 
 // Other settings
-#define B_DOUBLE_WILD_CHANCE            0          // % chance of encountering two Pokémon in a Wild Encounter.
+#define B_DOUBLE_WILD_CHANCE            20         // % chance of encountering two Pokémon in a Wild Encounter.
 #define B_DOUBLE_WILD_REQUIRE_2_MONS    FALSE      // If set to TRUE, Wild Double Battles will default to Single Battles when the player only has 1 usable Pokémon, ignoring B_DOUBLE_WILD_CHANCE and B_FLAG_FORCE_DOUBLE_WILD.
-#define B_MULTI_BATTLE_WHITEOUT         GEN_LATEST // In Gen4+, multi battles end when the Player and also their Partner don't have any more Pokémon to fight.
+#define B_MULTI_BATTLE_WHITEOUT         GEN_4      // In Gen4+, multi battles end when the Player and also their Partner don't have any more Pokémon to fight.
 #define B_EVOLUTION_AFTER_WHITEOUT      GEN_LATEST // In Gen6+, Pokemon that qualify for evolution after battle will evolve even if the player loses.
 #define B_WILD_NATURAL_ENEMIES          TRUE       // If set to TRUE, certain wild mon species will attack other species when partnered in double wild battles (eg. Zangoose vs Seviper)
 #define B_AFFECTION_MECHANICS           TRUE       // In Gen6+, there's a stat called affection that can trigger different effects in battle. From LGPE onwards, those effects use friendship instead.
 #define B_TRAINER_CLASS_POKE_BALLS      GEN_LATEST // In Gen7+, trainers will use certain types of Poké Balls depending on their trainer class.
 #define B_TRAINER_MON_RANDOM_ABILITY    FALSE      // If this is set to TRUE a random legal ability will be generated for a trainer mon
-#define B_OBEDIENCE_MECHANICS           GEN_LATEST // In PLA+ (here Gen8+), obedience restrictions also apply to non-outsider Pokémon, albeit based on their level met rather than actual level
+#define B_OBEDIENCE_MECHANICS           GEN_8      // In PLA+ (here Gen8+), obedience restrictions also apply to non-outsider Pokémon, albeit based on their level met rather than actual level
 #define B_USE_FROSTBITE                 FALSE      // In PLA, Frostbite replaces Freeze. Enabling this flag does the same here. Moves can still be cherry-picked to either Freeze or Frostbite. Freeze-Dry, Secret Power & Tri Attack depend on this config.
 #define B_TOXIC_REVERSAL                GEN_LATEST // In Gen5+, bad poison will change to regular poison at the end of battles.
 #define B_TRY_CATCH_TRAINER_BALL        GEN_LATEST // In Gen4+, trying to catch a Trainer's Pokémon does not consume the Poké Ball.
 #define B_SLEEP_CLAUSE                  FALSE      // Enables Sleep Clause all the time in every case, overriding B_FLAG_SLEEP_CLAUSE. Use that for modularity.
-#define B_PARTNER_MONS_MARKED_SEEN      FALSE      // If TRUE, if your double battle partner sends out a Pokémon you haven't encountered yet, it will be marked as SEEN in your Pokédex.
+#define B_PARTNER_MONS_MARKED_SEEN      TRUE       // If TRUE, if your double battle partner sends out a Pokémon you haven't encountered yet, it will be marked as SEEN in your Pokédex.
 
 #define NUM_BEEPS_GEN_LATEST            4                    // Loops 4 times
 #define NUM_BEEPS_GEN_3                 -1                   // Loops infinitely
@@ -397,7 +397,7 @@
 #define SHOW_TYPES_ALWAYS   1                    // Always show types in battle
 #define SHOW_TYPES_CAUGHT   2                    // Only show types if you've caught a species of the mon.
 #define SHOW_TYPES_SEEN     3                    // Only show types if you've seen a species of the mon.
-#define B_SHOW_TYPES        SHOW_TYPES_NEVER     // When to show type indicators next to Pokémon health bars in battle, while choosing a move after selecting a target Pokémon.
+#define B_SHOW_TYPES        SHOW_TYPES_SEEN      // When to show type indicators next to Pokémon health bars in battle, while choosing a move after selecting a target Pokémon.
 
 #define SHOW_EFFECTIVENESS_NEVER    0           // Never show effectiveness when selecting moves.
 #define SHOW_EFFECTIVENESS_ALWAYS   1           // Always show effectiveness when selecting moves.
