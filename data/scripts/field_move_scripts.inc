@@ -60,6 +60,57 @@ EventScript_UseRockSmash::
 	lockall
 	goto EventScript_RockSmashCommon
 
+@ rock smash fossil macro
+@ `item`: the fossil item to give to the player.
+@ `rarity`: the higher this value, the less likely a fossil item will be found.
+@ `jne_label`: the label to go to if the fossil was not found.
+	.macro rocksmashfossil item:req rarity:req jne_label:req
+	random \rarity
+	copyvar VAR_TEMP_D, VAR_RESULT
+	goto_if_ne VAR_TEMP_D, 0, \jne_label
+	giveitem_msg Text_RockSmash_FoundFossil, \item
+	.endm
+
+@ There's a 50% chance to get a fossil when smashing a rock.
+EventScript_RockSmashFossil::
+@ helix fossil (rarity: 15)
+EventScript_RockSmashFossilHelix:
+	rocksmashfossil ITEM_HELIX_FOSSIL 15 EventScript_RockSmashFossilDome
+@ dome fossil (rarity: 15)
+EventScript_RockSmashFossilDome:
+	rocksmashfossil ITEM_DOME_FOSSIL 15 EventScript_RockSmashFossilRoot
+@ root fossil (rarity: 15)
+EventScript_RockSmashFossilRoot:
+	rocksmashfossil ITEM_ROOT_FOSSIL 15 EventScript_RockSmashFossilClaw
+@ claw fossil (rarity: 15)
+EventScript_RockSmashFossilClaw:
+	rocksmashfossil ITEM_CLAW_FOSSIL 15 EventScript_RockSmashFossilSkull
+@ skull fossil (rarity: 40)
+EventScript_RockSmashFossilSkull:
+	rocksmashfossil ITEM_SKULL_FOSSIL 40 EventScript_RockSmashFossilArmor
+@ armor fossil (rarity: 40)
+EventScript_RockSmashFossilArmor:
+	rocksmashfossil ITEM_ARMOR_FOSSIL 40 EventScript_RockSmashFossilCover
+@ cover fossil (rarity: 25)
+EventScript_RockSmashFossilCover:
+	rocksmashfossil ITEM_COVER_FOSSIL 25 EventScript_RockSmashFossilPlume
+@ plume fossil (rarity: 20)
+EventScript_RockSmashFossilPlume:
+	rocksmashfossil ITEM_PLUME_FOSSIL 25 EventScript_RockSmashFossilJaw
+@ jaw fossil (rarity: 40)
+EventScript_RockSmashFossilJaw:
+	rocksmashfossil ITEM_JAW_FOSSIL 40 EventScript_RockSmashFossilSail
+@ sail fossil (rarity: 25)
+EventScript_RockSmashFossilSail:
+	rocksmashfossil ITEM_SAIL_FOSSIL 25 EventScript_RockSmashFossilNone
+@ no fossil
+EventScript_RockSmashFossilNone:
+	return
+
+Text_RockSmash_FoundFossil:
+	.string "{PLAYER} found a {STR_VAR_2}\n"
+	.string "preserved in the rock!$"
+
 @ Interact with smashable rock
 EventScript_RockSmash::
 	lockall
@@ -84,8 +135,13 @@ EventScript_SmashRock:: @ fallthrough
 	applymovement VAR_LAST_TALKED, Movement_SmashRock
 	waitmovement 0
 	removeobject VAR_LAST_TALKED
+	@ Rusturf Tunnel rock smash event
 	specialvar VAR_RESULT, TryUpdateRusturfTunnelState
 	goto_if_eq VAR_RESULT, TRUE, EventScript_EndSmash
+	@ fossil discovery inside rocks when using rock smash
+	call EventScript_RockSmashFossil
+	goto_if_eq VAR_RESULT, TRUE, EventScript_EndSmash
+	@ wild encounters when using rock smash
 	special RockSmashWildEncounter
 	goto_if_eq VAR_RESULT, FALSE, EventScript_EndSmash
 	waitstate
