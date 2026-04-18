@@ -17,6 +17,7 @@ EventScript_Follower::
 	getfolloweraction
 EventScript_FollowerEnd::
 	waitfieldeffect FLDEFF_EMOTE
+	special InteractWithFollowerMon
 	release
 	end
 

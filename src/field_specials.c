@@ -5777,3 +5777,14 @@ bool8 CheckAddCoins(void)
     else
         return TRUE;
 }
+
+void InteractWithFollowerMon(void)
+{
+    struct Pokemon *mon = &gPlayerParty[0];
+
+    // TODO: Run the `Pickup_cmd` assembly macro, `pickup`,
+    //       and give the player the held item if it changed (one was found).
+
+    // TODO: Find a way to display the `PARTY_MSG_DO_WHAT_WITH_MON` GUI menu,
+    //       and then implement it here.
+}
