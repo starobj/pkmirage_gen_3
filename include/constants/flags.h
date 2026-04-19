@@ -746,10 +746,15 @@
 #define FLAG_UNUSED_0x2B3  0x2B3 // Unused Flag
 #define FLAG_UNUSED_0x2B4  0x2B4 // Unused Flag
 #define FLAG_UNUSED_0x2B5  0x2B5 // Unused Flag
-#define FLAG_UNUSED_0x2B6  0x2B6 // Unused Flag
-#define FLAG_UNUSED_0x2B7  0x2B7 // Unused Flag
-#define FLAG_UNUSED_0x2B8  0x2B8 // Unused Flag
-#define FLAG_UNUSED_0x2B9  0x2B9 // Unused Flag
+
+// Vs. Seeker Flags
+#define FLAG_VS_SEEKER_CHARGING     0x2B6
+
+// DexNav Flags
+#define FLAG_DEXNAV_SEARCHING       0x2B7
+#define FLAG_DEXNAV_GET             0x2B8
+#define FLAG_DEXNAV_DETECTOR_MODE   0x2B9
+
 #define FLAG_UNUSED_0x2BA  0x2BA // Unused Flag
 #define FLAG_UNUSED_0x2BB  0x2BB // Unused Flag
 
