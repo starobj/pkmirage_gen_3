@@ -19,6 +19,10 @@ LilycoveCity_DepartmentStore_3F_Pokemart_Vitamins:
 	.2byte ITEM_ZINC
 	.2byte ITEM_CARBOS
 	.2byte ITEM_HP_UP
+	.2byte ITEM_EXP_CANDY_XS
+	.2byte ITEM_EXP_CANDY_S
+	.2byte ITEM_EXP_CANDY_M
+	.2byte ITEM_EXP_CANDY_L
 	pokemartlistend
 
 LilycoveCity_DepartmentStore_3F_EventScript_ClerkRight::
@@ -69,4 +73,3 @@ LilycoveCity_DepartmentStore_3F_Text_WantMoreEndurance:
 LilycoveCity_DepartmentStore_3F_Text_GaveCarbosToSpeedUpMon:
 	.string "I gave a CARBOS to my POKéMON,\n"
 	.string "and its SPEED went up.$"
-
