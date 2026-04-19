@@ -29,6 +29,8 @@ LilycoveCity_DepartmentStore_4F_Pokemart_AttackTMs:
 	.2byte ITEM_TM_THUNDER
 	.2byte ITEM_TM_BLIZZARD
 	.2byte ITEM_TM_HYPER_BEAM
+	.2byte ITEM_TM_FOCUS_BLAST
+	.2byte ITEM_TM_STONE_EDGE
 	pokemartlistend
 
 LilycoveCity_DepartmentStore_4F_EventScript_ClerkRight::
@@ -65,4 +67,3 @@ LilycoveCity_DepartmentStore_4F_Text_FiftyDifferentTMs:
 LilycoveCity_DepartmentStore_4F_Text_PokemonOnlyHaveFourMoves:
 	.string "I'd like to get all the different TMs,\n"
 	.string "but a POKéMON learns only four moves.$"
-
