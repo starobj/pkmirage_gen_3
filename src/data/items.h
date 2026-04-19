@@ -56,8 +56,8 @@ static const u8 sSwiftFeatherDesc[]   = _("An item that raises\n"
                                           "a Pokémon.");
 
 static const u8 sBigMushroomDesc[]    = _("A rare mushroom\n"
-                                          "that would sell at a\n"
-                                          "high price.");
+                                          "that makes some\n"
+                                          "Pokémon evolve.");
 
 static const u8 sShardsDesc[]         = _("A shard from an\n"
                                           "ancient item. Can\n"
@@ -2773,9 +2773,10 @@ const struct ItemInfo gItemsInfo[] =
         .price = 5000 * TREASURE_FACTOR,
         .description = sBigMushroomDesc,
         .pocket = POCKET_ITEMS,
-        .sortType = ITEM_TYPE_SELLABLE,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .sortType = ITEM_TYPE_EVOLUTION_ITEM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone,
+        .effect = gItemEffect_EvoItem,
         .flingPower = 30,
         .iconPic = gItemIcon_BigMushroom,
         .iconPalette = gItemIconPalette_Mushroom,

@@ -965,7 +965,7 @@ enum __attribute__((packed)) Item
     ITEM_LUSTROUS_GLOBE = 794,
 
     ITEM_BLACK_AUGURITE = 795,
-    ITEM_RARE_MUSHROOM = 796,
+    ITEM_LINKING_CORD = 796,
     ITEM_PEAT_BLOCK = 797,
     ITEM_BERSERK_GENE = 798,
 

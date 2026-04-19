@@ -2450,7 +2450,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .levelUpLearnset = sBoldoreLevelUpLearnset,
         .teachableLearnset = sBoldoreTeachableLearnset,
         .evolutions = EVOLUTION({EVO_TRADE, 0, SPECIES_GIGALITH},
-                                {EVO_ITEM, ITEM_RARE_MUSHROOM, SPECIES_GIGALITH}),
+                                {EVO_ITEM, ITEM_BIG_MUSHROOM, SPECIES_GIGALITH}),
     },
 
     [SPECIES_GIGALITH] =
@@ -3188,7 +3188,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .levelUpLearnset = sGurdurrLevelUpLearnset,
         .teachableLearnset = sGurdurrTeachableLearnset,
         .evolutions = EVOLUTION({EVO_TRADE, 0, SPECIES_CONKELDURR},
-                                {EVO_ITEM, ITEM_RARE_MUSHROOM, SPECIES_CONKELDURR}),
+                                {EVO_ITEM, ITEM_BIG_MUSHROOM, SPECIES_CONKELDURR}),
     },
 
     [SPECIES_CONKELDURR] =
