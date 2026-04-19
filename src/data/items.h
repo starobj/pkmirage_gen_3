@@ -1617,7 +1617,7 @@ const struct ItemInfo gItemsInfo[] =
     #elif I_PRICE >= GEN_7
         .price = 10000,
     #else
-        .price = 1000,
+        .price = 9800,
     #endif
         .holdEffectParam = 0,
         .description = COMPOUND_STRING(
