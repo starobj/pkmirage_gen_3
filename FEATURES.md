@@ -84,6 +84,98 @@ A lot of features listed below can be turned off as desired. Check which ones in
 - ***XY Berry Mechanics:*** Mutations, moisture, weeds, pests.
 - ***Obtained Item descriptions*** (feature branch by @ghoulslash).
 
+## Pokémon fossils (WIP)
+- ***Fossil Excavation***: Fossils can now be occasionally discovered by using the Rock Smash field move in caves, deserts, and some mountains.
+- ***Fossil Pokémon***:
+    - **Helix Fossil**: *Omanyte*
+    - **Dome Fossil**: *Kabuto*
+    - **Root Fossil**: *Lileep*
+    - **Claw Fossil**: *Anorith*
+    - **Armor Fossil**: *Shieldon*
+    - **Skull Fossil**: *Cranidos*
+    - **Cover Fossil**: *Tortuga*
+    - **Plume Fossil**: *Archen*
+    - **Jaw Fossil**: *Tyrunt*
+    - **Sail Fossil**: *Amaura*
+    - **Fossilized Bird**:
+        - **Chachot**: *Uncommon*
+        - **Delibird**: *Uncommon*
+        - **Ducklett**: *Rare*
+        - **Farfetch'd**: *Uncommon*
+        - **Hawlucha**: *Rare*
+        - **Hoothoot**: *Common*
+        - **Murkrow**: *Common*
+        - **Pidgey**: *Common*
+        - **Pidove**: *Rare*
+        - **Piplup**: *Rare*
+        - **Psyduck**: *Common*
+        - **Rufflet**: *Rare*
+        - **Sigilyph**: *Rare*
+        - **Skarmory**: *Common*
+        - **Spearow**: *Common*
+        - **Starly**: *Uncommon*
+        - **Swablu**: *Common*
+        - **Tailow**: *Common*
+        - **Torchic**: *Uncommon*
+        - **Vullaby**: *Rare*
+        - **Wingull**: *Common*
+    - **Fossilized Fish**:
+        - **Barboach**: *Common*
+        - **Carvanha**: *Common*
+        - **Corphish**: *Common*
+        - **Feebas**: *Common*
+        - **Finneon**: *Uncommon*
+        - **Luvdisc**: *Common*
+        - **Manaphy**: *Rare*
+        - **Mantine**: *Uncommon*
+        - **Mudkip**: *Uncommon*
+        - **Octillery**: *Uncommon*
+        - **Qwilfish**: *Uncommon*
+        - **Relicanth**: *Uncommon*
+        - **Remoraid**: *Uncommon*
+        - **Shellos* (East)*: *Uncommon*
+        - **Shellos* (West)*: *Uncommon*
+        - **Mantyke**: *Uncommon*
+        - **Wailmer**: *Common*
+    - **Fossilized Drake**:
+        - *Bagon*: *Uncommon*
+        - *Charmander*: *Uncommon*
+        - *Dratini*: *Uncommon*
+        - *Gible*: *Rare*
+    - **Fossilized Dino**:
+        - *Bulbasaur*: *Uncommon*
+        - *Chicorita*: *Uncommon*
+        - *Cyndaquil*: *Uncommon*
+        - *Larvitar*: *Uncommon*
+        - *Squirtle*: *Uncommon*
+        - *Totodile*: *Uncommon*
+        - *Treecko*: *Uncommon*
+        - *Tropius*: *Common*
+        - *Turtwig*: *Rare*
+- ***Fossil Rarities***:
+    - **Helix Fossil**: *Uncommon*
+    - **Dome Fossil**: *Uncommon*
+    - **Root Fossil**: *Uncommon*
+    - **Claw Fossil**: *Uncommon*
+    - **Armor Fossil**: *Uncommon*
+    - **Skull Fossil**: *Uncommon*
+    - **Cover Fossil**: *Rare*
+    - **Plume Fossil**: *Rare*
+    - **Jaw Fossil**: *Can be found in museums*
+    - **Sail Fossil**: *Rare*
+    - **Fossilized Bird**: *Common*
+    - **Fossilized Fish**: *Common*
+    - **Fossilized Drake**: *Uncommon*
+    - **Fossilized Dino**: *Uncommon*
+
+## Wonder trade (TODO)
+
+Instead of releasing, you can optionally choose to **Wonder Trade** your Pokémon. When you **Wonder Trade** a Pokémon, it will be exchanged for a completely random Pokémon. **Wonder Trade** costs **Ꝑ1,000**.
+
+## Wishing Well (TODO)
+
+Random Pokémon can also be obtained from the **Wishing Well**. The **Wishing Well** costs a **Bottle Cap** for a completely random Pokémon, and a **Gold Bottle Cap** to guarantee a shiny Pokémon.
+
 ## Developer tools
 - ***Integrated Testing:*** Pinpoint if your custom mechanics have broken something else in the game or not.
 - ***Pokémon Sprite Visualizer:*** Test every Pokémon sprite and animation.
