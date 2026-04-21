@@ -32,6 +32,10 @@ CeladonCity_DepartmentStore_4F_Items::
 	.2byte ITEM_WATER_STONE
 	.2byte ITEM_LEAF_STONE
 	.2byte ITEM_BIG_MUSHROOM
+	.2byte ITEM_HEAL_POWDER
+	.2byte ITEM_ENERGY_POWDER
+	.2byte ITEM_ENERGY_ROOT
+	.2byte ITEM_REVIVAL_HERB
 	.2byte ITEM_NONE
 	release
 	end

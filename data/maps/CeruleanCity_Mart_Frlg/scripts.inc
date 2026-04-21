@@ -28,6 +28,10 @@ CeruleanCity_Mart_Items::
 	.2byte ITEM_PARALYZE_HEAL
 	.2byte ITEM_AWAKENING
 	.2byte ITEM_BURN_HEAL
+	.2byte ITEM_APPLE
+	.2byte ITEM_GREEN_TEA
+	.2byte ITEM_MUFFIN
+	.2byte ITEM_MYSTERY_MOCHI
 	.2byte ITEM_ESCAPE_ROPE
 	.2byte ITEM_REPEL
 	.2byte ITEM_NONE
@@ -47,4 +51,3 @@ CeruleanCity_Mart_Text_DoYouKnowAboutRareCandy::
 	.string "They don't sell it in shops.\p"
 	.string "I think it makes POKéMON grow\n"
 	.string "very quickly all of a sudden.$"
-

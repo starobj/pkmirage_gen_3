@@ -56,6 +56,9 @@ IndigoPlateau_PokemonCenter_1F_Items::
 	.2byte ITEM_MAX_POTION
 	.2byte ITEM_REVIVE
 	.2byte ITEM_FULL_HEAL
+	.2byte ITEM_EXP_CANDY_M
+	.2byte ITEM_EXP_CANDY_L
+	.2byte ITEM_EXP_CANDY_XL
 	.2byte ITEM_MAX_REPEL
 	.2byte ITEM_NONE
 	release
@@ -110,4 +113,3 @@ IndigoPlateau_PokemonCenter_1F_Text_LancesCousinGymLeaderFarAway::
 	.string "From what I've heard, LANCE has\n"
 	.string "a cousin who's a GYM LEADER\l"
 	.string "somewhere far away.$"
-

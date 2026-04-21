@@ -19,9 +19,22 @@ SlateportCity_Mart_Pokemart:
 	.2byte ITEM_SUPER_POTION
 	.2byte ITEM_ANTIDOTE
 	.2byte ITEM_PARALYZE_HEAL
+	.2byte ITEM_EXP_CANDY_XS
+	.2byte ITEM_EXP_CANDY_S
 	.2byte ITEM_ESCAPE_ROPE
 	.2byte ITEM_REPEL
 	.2byte ITEM_HARBOR_MAIL
+	@.2byte ITEM_TM_HONE_CLAWS
+	.2byte ITEM_TM_ROAR
+	@.2byte ITEM_TM_SNOWSCAPE
+	@.2byte ITEM_TM_TELEKINESIS
+	.2byte ITEM_TM_PROTECT
+	.2byte ITEM_TM_SAFEGUARD
+	.2byte ITEM_TM_FRUSTRATION
+	@.2byte ITEM_TM_SMACK_DOWN
+	.2byte ITEM_TM_DIG
+	.2byte ITEM_TM_BRICK_BREAK
+	.2byte ITEM_TM_DOUBLE_TEAM
 	pokemartlistend
 
 SlateportCity_Mart_EventScript_BlackBelt::
@@ -43,4 +56,3 @@ SlateportCity_Mart_Text_GreatBallIsBetter:
 	.string "at catching POKéMON.\p"
 	.string "With this, I should be able to get that\n"
 	.string "elusive POKéMON…$"
-

@@ -19,6 +19,9 @@ PetalburgCity_Mart_Pokemart_Basic:
 	.2byte ITEM_ANTIDOTE
 	.2byte ITEM_PARALYZE_HEAL
 	.2byte ITEM_AWAKENING
+	.2byte ITEM_APPLE
+	.2byte ITEM_RAW_HONEY
+	.2byte ITEM_GREEN_TEA
 	.2byte ITEM_ESCAPE_ROPE
 	.2byte ITEM_REPEL
 	.2byte ITEM_X_SPEED
@@ -42,6 +45,11 @@ PetalburgCity_Mart_Pokemart_Expanded:
 	.2byte ITEM_ANTIDOTE
 	.2byte ITEM_PARALYZE_HEAL
 	.2byte ITEM_AWAKENING
+	.2byte ITEM_APPLE
+	.2byte ITEM_GREEN_TEA
+	.2byte ITEM_RAW_HONEY
+	.2byte ITEM_GINSENG
+	.2byte ITEM_PASTRY
 	.2byte ITEM_ESCAPE_ROPE
 	.2byte ITEM_REPEL
 	.2byte ITEM_X_SPEED
@@ -79,4 +87,3 @@ PetalburgCity_Mart_Text_TakeSomeAntidotesWithYou:
 	.string "If you walk around with a poisoned\n"
 	.string "POKéMON, it will lose HP until it faints.\l"
 	.string "Take some ANTIDOTES with you.$"
-

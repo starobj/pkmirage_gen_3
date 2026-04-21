@@ -26,6 +26,13 @@ FuchsiaCity_Mart_Items::
 	.2byte ITEM_SUPER_POTION
 	.2byte ITEM_REVIVE
 	.2byte ITEM_FULL_HEAL
+	.2byte ITEM_APPLE
+	.2byte ITEM_GREEN_TEA
+	.2byte ITEM_PASTRY
+	.2byte ITEM_CUSTARD
+	.2byte ITEM_HONEY
+	.2byte ITEM_RAW_HONEY
+	.2byte ITEM_GINSENG
 	.2byte ITEM_MAX_REPEL
 	.2byte ITEM_NONE
 	release
@@ -40,4 +47,3 @@ FuchsiaCity_Mart_Text_DontTheyHaveSafariZonePennants::
 FuchsiaCity_Mart_Text_DidYouTryXSpeed::
 	.string "Did you try X SPEED?\n"
 	.string "It speeds up a POKéMON in battle.$"
-

@@ -51,7 +51,7 @@ PalletTown_ProfessorOaksLab_OnFrame::
 	map_script_2 VAR_MAP_SCENE_PALLET_TOWN_PROFESSOR_OAKS_LAB, 7, PalletTown_ProfessorOaksLab_EventScript_EnterForNationalDexScene
 	.2byte 0
 
-PalletTown_ProfessorOaksLab_EventScript_EnterForNationalDexScene:: @ 8169002 
+PalletTown_ProfessorOaksLab_EventScript_EnterForNationalDexScene:: @ 8169002
 	lockall
 	setvar VAR_FACING, DIR_NORTH
 	textcolor NPC_TEXT_COLOR_MALE
@@ -652,12 +652,26 @@ PalletTown_ProfessorOaksLab_EventScript_ReceiveDexScene::
 	message PalletTown_ProfessorOaksLab_Text_ReceivedPokedexFromOak
 	waitmessage
 	waitfanfare
+	playfanfare MUS_RG_OBTAIN_KEY_ITEM
+	message PalletTown_ProfessorOaksLab_Text_ReceivedPokenavFromOak
+	waitmessage
+	waitfanfare
 	call EventScript_RestorePrevTextColor
 	setflag FLAG_SYS_POKEDEX_GET
+	setflag FLAG_SYS_POKENAV_GET
+	setflag FLAG_RECEIVED_POKENAV
+	setflag FLAG_ADDED_MATCH_CALL_TO_POKENAV
 	special SetUnlockedPokedexFlags
 	setvar VAR_MAP_SCENE_POKEMON_CENTER_TEALA, 1
+	msgbox PalletTown_ProfessorOaksLab_Text_OakExplainPokenavRestUp, MSGBOX_DEFAULT
+	closemessage
+	call Common_EventScript_OutOfCenterPartyHeal
 	msgbox PalletTown_ProfessorOaksLab_Text_OakCatchMonsForDataTakeThese
-	giveitem_msg PalletTown_ProfessorOaksLab_Text_ReceivedFivePokeBalls, ITEM_POKE_BALL, 5
+	giveitem_msg PalletTown_ProfessorOaksLab_Text_ReceivedTenPokeBalls, ITEM_POKE_BALL, 10
+	giveitem_msg PalletTown_ProfessorOaksLab_Text_ReceivedPremierBall, ITEM_PREMIER_BALL, 1
+	giveitem_msg PalletTown_ProfessorOaksLab_Text_ReceivedThreePotions, ITEM_POTION, 3
+	giveitem_msg PalletTown_ProfessorOaksLab_Text_ReceivedThreeApples, ITEM_APPLE, 3
+	giveitem_msg PalletTown_ProfessorOaksLab_Text_ReceivedExpCandyXS, ITEM_GREEN_TEA, 1
 	msgbox PalletTown_ProfessorOaksLab_Text_OakExplainCatching
 	famechecker FAMECHECKER_OAK, 1
 	msgbox PalletTown_ProfessorOaksLab_Text_OakCompleteMonGuideWasMyDream
@@ -930,7 +944,10 @@ PalletTown_ProfessorOaksLab_EventScript_PlayerOutOfBalls::
 
 PalletTown_ProfessorOaksLab_EventScript_GivePlayerMoreBalls::
 	msgbox PalletTown_ProfessorOaksLab_Text_OakAddedNothingToPokedex
-	giveitem_msg PalletTown_ProfessorOaksLab_Text_ReceivedFivePokeBalls, ITEM_POKE_BALL, 5
+	giveitem_msg PalletTown_ProfessorOaksLab_Text_ReceivedTenPokeBalls, ITEM_POKE_BALL, 10
+	giveitem_msg PalletTown_ProfessorOaksLab_Text_ReceivedPremierBall, ITEM_PREMIER_BALL, 1
+	giveitem_msg PalletTown_ProfessorOaksLab_Text_ReceivedPremierBall, ITEM_APPLE, 3
+	giveitem_msg PalletTown_ProfessorOaksLab_Text_ReceivedPremierBall, ITEM_GREEN_TEA, 1
 	setflag FLAG_GOT_POKEBALLS_FROM_OAK_AFTER_22_RIVAL
 	release
 	end
@@ -1475,6 +1492,31 @@ PalletTown_ProfessorOaksLab_Text_ReceivedPokedexFromOak::
 	.string "{PLAYER} received the POKéDEX\n"
 	.string "from PROF. OAK.$"
 
+PalletTown_ProfessorOaksLab_Text_ReceivedPokenavFromOak::
+	.string "{PLAYER} received the POKéNAV\n"
+	.string "from PROF. OAK.$"
+
+PalletTown_ProfessorOaksLab_Text_OakExplainPokenavRestUp::
+	.string "OAK: That device…\p"
+	.string "It's a POKéMON NAVIGATOR, or POKéNAV\n"
+	.string "for short. The DEVON CORPORATION made\p"
+	.string "it. The POKéNAV is an indispensable\n"
+	.string "tool for any TRAINER on an adventure.\p"
+	.string "It has a map of the KANTO region.\p"
+	.string "You can check the locations of\n"
+	.string "VIRIDIAN and PEWTER easily!\p"
+	.string "By the way, I've heard that sinister\n"
+	.string "criminals--TEAM ROCKET, I believe--\l"
+	.string "have been stealing POKéMON and\p"
+	.string "causing trouble far and wide. If they\n"
+	.string "approach you, send out your POKéMON.\p"
+	.string "I don't want to scare you, though.\n"
+	.string "You'll be safe with your POKéMON.\p"
+	.string "You should eat some of this delicious\n"
+	.string "tofu with your mother and I. I cooked\p"
+	.string "it with teriyaki and ginger! Rest up\n"
+	.string "for awhile before heading to VERIDIAN.$"
+
 PalletTown_ProfessorOaksLab_Text_OakCatchMonsForDataTakeThese::
 	.string "OAK: You can't get detailed data\n"
 	.string "on POKéMON by just seeing them.\p"
@@ -1483,8 +1525,20 @@ PalletTown_ProfessorOaksLab_Text_OakCatchMonsForDataTakeThese::
 	.string "So, here are some tools for\n"
 	.string "catching wild POKéMON.$"
 
-PalletTown_ProfessorOaksLab_Text_ReceivedFivePokeBalls::
-	.string "{PLAYER} received five POKé BALLS.$"
+PalletTown_ProfessorOaksLab_Text_ReceivedTenPokeBalls::
+	.string "{PLAYER} received ten POKé BALLS.$"
+
+PalletTown_ProfessorOaksLab_Text_ReceivedPremierBall::
+	.string "{PLAYER} received a PREMIER BALL.$"
+
+PalletTown_ProfessorOaksLab_Text_ReceivedThreePotions::
+	.string "{PLAYER} received three POTIONS.$"
+
+PalletTown_ProfessorOaksLab_Text_ReceivedThreeApples::
+	.string "{PLAYER} received three APPLES.$"
+
+PalletTown_ProfessorOaksLab_Text_ReceivedExpCandyXS::
+	.string "{PLAYER} received an EXP. CANDY XS.$"
 
 PalletTown_ProfessorOaksLab_Text_OakExplainCatching::
 	.string "When a wild POKéMON appears,\n"
@@ -1654,4 +1708,3 @@ PalletTown_ProfessorOaksLab_Text_RivalIllCompleteThePokedex::
 	.string "I think I'll try looking around\n"
 	.string "ONE ISLAND first…\p"
 	.string "Anyways, I'm outta here!$"
-

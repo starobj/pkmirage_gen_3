@@ -23,6 +23,13 @@ RustboroCity_Mart_Pokemart_Basic:
 	.2byte ITEM_SUPER_POTION
 	.2byte ITEM_ANTIDOTE
 	.2byte ITEM_PARALYZE_HEAL
+	.2byte ITEM_BIG_MUSHROOM
+	.2byte ITEM_HEAL_POWDER
+	.2byte ITEM_ENERGY_POWDER
+	.2byte ITEM_APPLE
+	.2byte ITEM_RAW_HONEY
+	.2byte ITEM_GREEN_TEA
+	.2byte ITEM_MUFFIN
 	.2byte ITEM_ESCAPE_ROPE
 	.2byte ITEM_REPEL
 	.2byte ITEM_X_SPEED
@@ -45,6 +52,20 @@ RustboroCity_Mart_Pokemart_Expanded:
 	.2byte ITEM_SUPER_POTION
 	.2byte ITEM_ANTIDOTE
 	.2byte ITEM_PARALYZE_HEAL
+	.2byte ITEM_BIG_MUSHROOM
+	.2byte ITEM_HEAL_POWDER
+	.2byte ITEM_SHROOM_POWDER
+	.2byte ITEM_ENERGY_POWDER
+	.2byte ITEM_NORI_POWDER
+	.2byte ITEM_APPLE
+	.2byte ITEM_GINSENG
+	.2byte ITEM_ENERGY_ROOT
+	.2byte ITEM_REVIVAL_HERB
+	.2byte ITEM_RAW_HONEY
+	.2byte ITEM_GREEN_TEA
+	.2byte ITEM_MUFFIN
+	.2byte ITEM_PASTRY
+	.2byte ITEM_MYSTERY_MOCHI
 	.2byte ITEM_ESCAPE_ROPE
 	.2byte ITEM_REPEL
 	.2byte ITEM_X_SPEED
@@ -73,12 +94,17 @@ RustboroCity_Mart_Text_BuyingHealsInCaseOfShroomish:
 RustboroCity_Mart_Text_ShouldBuySuperPotionsInstead:
 	.string "My POKéMON evolved.\n"
 	.string "It has a lot of HP now.\p"
-	.string "I should buy SUPER POTIONS for it\n"
-	.string "instead of ordinary POTIONS.$"
+	.string "I should buy ENERGY POWDER or\n"
+	.string "SUPER POTIONS for it instead of\p"
+	.string "ordinary POTIONS.\n"
+	.string "This POKéMON MART gets its\p"
+	.string "ENERGY POWDER from the\n"
+	.string "PRETTY PETAL FLOWER SHOP,\p"
+	.string "so buying herbal medicine here is\n"
+	.string "supporting local business.$"
 
 RustboroCity_Mart_Text_GettingEscapeRopeJustInCase:
 	.string "I'm getting an ESCAPE ROPE just in\n"
 	.string "case I get lost in a cave.\p"
 	.string "I just need to use it to get back to\n"
 	.string "the entrance.$"
-

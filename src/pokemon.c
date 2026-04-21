@@ -4565,6 +4565,7 @@ u8 *UseStatIncreaseItem(enum Item itemId)
 
     switch (itemEffect[1])
     {
+    // X items
     case ITEM1_X_ATTACK:
         BufferStatRoseMessage(STAT_ATK);
         break;
@@ -4583,12 +4584,28 @@ u8 *UseStatIncreaseItem(enum Item itemId)
     case ITEM1_X_ACCURACY:
         BufferStatRoseMessage(STAT_ACC);
         break;
-    }
-
-    if (itemEffect[3] & ITEM3_GUARD_SPEC)
-    {
-        gBattlerAttacker = gBattlerInMenuId;
-        BattleStringExpandPlaceholdersToDisplayedString(gText_PkmnShroudedInMist);
+    // Aux items
+    case ITEM1_AUX_EVASION:
+        BufferStatRoseMessage(STAT_EVASION);
+        break;
+    case ITEM1_AUX_GUARD:
+        BufferStatRoseMessage(STAT_DEF);
+        BufferStatRoseMessage(STAT_SPDEF);
+        break;
+    case ITEM1_AUX_POWER:
+        BufferStatRoseMessage(STAT_ATK);
+        BufferStatRoseMessage(STAT_SPATK);
+        break;
+    case ITEM1_AUX_POWERGUARD:
+        BufferStatRoseMessage(STAT_ATK);
+        BufferStatRoseMessage(STAT_SPATK);
+        BufferStatRoseMessage(STAT_DEF);
+        BufferStatRoseMessage(STAT_SPDEF);
+        break;
+    // Fertility items
+    case ITEM1_FERTILITY:
+        // TODO: Implement feature `fertility`.
+        break;
     }
 
     return gDisplayedStringBattle;

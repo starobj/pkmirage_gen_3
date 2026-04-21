@@ -14,9 +14,14 @@ LavaridgeTown_HerbShop_EventScript_Clerk::
 	.align 2
 LavaridgeTown_HerbShop_Pokemart:
 	.2byte ITEM_ENERGY_POWDER
-	.2byte ITEM_ENERGY_ROOT
 	.2byte ITEM_HEAL_POWDER
+	.2byte ITEM_APPLE
+	.2byte ITEM_GINSENG
+	.2byte ITEM_ENERGY_ROOT
 	.2byte ITEM_REVIVAL_HERB
+	.2byte ITEM_HONEY
+	.2byte ITEM_RAW_HONEY
+	.2byte ITEM_GREEN_TEA
 	pokemartlistend
 
 LavaridgeTown_HerbShop_EventScript_ExpertM::
@@ -61,4 +66,3 @@ LavaridgeTown_HerbShop_Text_HerbalMedicineWorksButMonWillDislike:
 	.string "Herbal medicine works impressively well.\n"
 	.string "But your POKéMON will dislike you for it.\l"
 	.string "It must be horribly bitter!$"
-

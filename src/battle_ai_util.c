@@ -4676,10 +4676,10 @@ static const u16 sRecycleEncouragedItems[] =
     ITEM_MENTAL_HERB,
     ITEM_POWER_HERB,
     ITEM_BERRY_JUICE,
-    ITEM_WEAKNESS_POLICY,
-    ITEM_BLUNDER_POLICY,
-    ITEM_KEE_BERRY,
-    ITEM_MARANGA_BERRY,
+    ITEM_APPLE,
+    ITEM_GREEN_TEA,
+    ITEM_ENERGY_ROOT,
+    ITEM_REVIVAL_HERB,
     // TODO expand this
 };
 

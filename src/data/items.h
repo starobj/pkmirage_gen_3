@@ -886,27 +886,23 @@ const struct ItemInfo gItemsInfo[] =
         .iconPalette = gItemIconPalette_EnergyPowder,
     },
 
-    [ITEM_ENERGY_ROOT] =
+    [ITEM_SHROOM_POWDER] =
     {
-        .name = ITEM_NAME("Energy Root"),
+        .name = ITEM_NAME("Shroom Powder"),
         .price = (I_PRICE >= GEN_7) ? 1200 : 800,
         .description = COMPOUND_STRING(
-            "A bitter root\n"
-            "that restores HP\n"
-        #if I_HEALTH_RECOVERY >= GEN_7
-            "by 120 points."),
-        #else
-            "by 200 points."),
-        #endif
+            "Prevents stat\n"
+            "reduction when\n"
+            "used in battle."),
         .pocket = POCKET_ITEMS,
         .sortType = ITEM_TYPE_HEALTH_RECOVERY,
-        .type = ITEM_USE_PARTY_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_Medicine,
-        .battleUsage = EFFECT_ITEM_RESTORE_HP,
-        .effect = gItemEffect_EnergyRoot,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .battleUsage = EFFECT_ITEM_SET_MIST,
+        .effect = gItemEffect_GuardSpec,
         .flingPower = 30,
-        .iconPic = gItemIcon_EnergyRoot,
-        .iconPalette = gItemIconPalette_EnergyRoot,
+        .iconPic = gItemIcon_Powder,
+        .iconPalette = gItemIconPalette_EnergyPowder,
     },
 
     [ITEM_HEAL_POWDER] =
@@ -928,23 +924,23 @@ const struct ItemInfo gItemsInfo[] =
         .iconPalette = gItemIconPalette_HealPowder,
     },
 
-    [ITEM_REVIVAL_HERB] =
+    [ITEM_NORI_POWDER] =
     {
-        .name = ITEM_NAME("Revival Herb"),
+        .name = ITEM_NAME("Nori Powder"),
         .price = 2800,
         .description = COMPOUND_STRING(
-            "A very bitter herb\n"
-            "that revives a\n"
-            "fainted Pokémon."),
+            "A savory powder that\n"
+            "restores the user's\n"
+            "HP a little."),
         .pocket = POCKET_ITEMS,
         .sortType = ITEM_TYPE_HEALTH_RECOVERY,
         .type = ITEM_USE_PARTY_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_Medicine,
         .battleUsage = EFFECT_ITEM_REVIVE,
-        .effect = gItemEffect_RevivalHerb,
+        .effect = gItemEffect_SitrusBerry,
         .flingPower = 30,
-        .iconPic = gItemIcon_RevivalHerb,
-        .iconPalette = gItemIconPalette_RevivalHerb,
+        .iconPic = gItemIcon_Powder,
+        .iconPalette = gItemIconPalette_HealPowder,
     },
 
     [ITEM_ANTIDOTE] =
@@ -1500,7 +1496,7 @@ const struct ItemInfo gItemsInfo[] =
     {
         .name = ITEM_NAME("PP Max"),
         .pluralName = ITEM_PLURAL_NAME("PP Maxes"),
-        .price = (I_PRICE >= GEN_7) ? 10000 : 9800,
+        .price = (I_PRICE >= GEN_7) ? 19600 : 9800,
         .description = COMPOUND_STRING(
             "Raises the PP of a\n"
             "move to its maximum\n"
@@ -4575,123 +4571,137 @@ const struct ItemInfo gItemsInfo[] =
         .iconPalette = gItemIconPalette_OvalStone,
     },
 
-    [ITEM_STRAWBERRY_SWEET] =
+    [ITEM_RED_GUMMY] =
     {
-        .name = ITEM_NAME("Strawberry Sweet"),
-        .price = 500 * TREASURE_FACTOR,
+        .name = ITEM_NAME("Red Gummy"),
+        .pluralName = ITEM_PLURAL_NAME("Red Gummies"),
+        .price = (I_PRICE >= GEN_7) ? 10000 : 9800,
         .description = COMPOUND_STRING(
-            "Strawberry-shaped\n"
-            "sweet loved by\n"
-            "Milcery."),
+            "Raises the base\n"
+            "Attack stat of one\n"
+            "Pokémon."),
         .pocket = POCKET_ITEMS,
-        .sortType = ITEM_TYPE_EVOLUTION_ITEM,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .sortType = ITEM_TYPE_STAT_BOOST_GUMMY,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_Medicine,
+        .effect = gItemEffect_Protein,
         .flingPower = 10,
         .iconPic = gItemIcon_StrawberrySweet,
         .iconPalette = gItemIconPalette_StrawberrySweet,
     },
 
-    [ITEM_LOVE_SWEET] =
+    [ITEM_BLUE_GUMMY] =
     {
-        .name = ITEM_NAME("Love Sweet"),
-        .price = 500 * TREASURE_FACTOR,
+        .name = ITEM_NAME("Blue Gummy"),
+        .pluralName = ITEM_PLURAL_NAME("Blue Gummies"),
+        .price = (I_PRICE >= GEN_7) ? 10000 : 9800,
         .description = COMPOUND_STRING(
-            "A heart-shaped\n"
-            "sweet loved by\n"
-            "Milcery."),
+            "Raises the base\n"
+            "Sp. Def stat of one\n"
+            "Pokémon."),
         .pocket = POCKET_ITEMS,
-        .sortType = ITEM_TYPE_EVOLUTION_ITEM,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .flingPower = 10,
-        .iconPic = gItemIcon_LoveSweet,
-        .iconPalette = gItemIconPalette_LoveSweet,
-    },
-
-    [ITEM_BERRY_SWEET] =
-    {
-        .name = ITEM_NAME("Berry Sweet"),
-        .price = 500 * TREASURE_FACTOR,
-        .description = COMPOUND_STRING(
-            "A berry-shaped\n"
-            "sweet loved by\n"
-            "Milcery."),
-        .pocket = POCKET_ITEMS,
-        .sortType = ITEM_TYPE_EVOLUTION_ITEM,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .sortType = ITEM_TYPE_STAT_BOOST_GUMMY,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_Medicine,
+        .effect = gItemEffect_Zinc,
         .flingPower = 10,
         .iconPic = gItemIcon_BerrySweet,
         .iconPalette = gItemIconPalette_BerrySweet,
     },
 
-    [ITEM_CLOVER_SWEET] =
+    [ITEM_PINK_GUMMY] =
     {
-        .name = ITEM_NAME("Clover Sweet"),
-        .price = 500 * TREASURE_FACTOR,
+        .name = ITEM_NAME("Pink Gummy"),
+        .pluralName = ITEM_PLURAL_NAME("Pink Gummies"),
+        .price = (I_PRICE >= GEN_7) ? 2400 : 1200,
+        .holdEffectParam = X_ITEM_STAGES,
         .description = COMPOUND_STRING(
-            "A clover-shaped\n"
-            "sweet loved by\n"
-            "Milcery."),
+            "Drastically raises\n"
+            "breeding chances\n"
+            "between Pokémon."),
         .pocket = POCKET_ITEMS,
-        .sortType = ITEM_TYPE_EVOLUTION_ITEM,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .sortType = ITEM_TYPE_STAT_BOOST_GUMMY,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_Medicine,
+        .effect = gItemEffect_Fertility,
+        .flingPower = 10,
+        .iconPic = gItemIcon_LoveSweet,
+        .iconPalette = gItemIconPalette_LoveSweet,
+    },
+
+    [ITEM_GREEN_GUMMY] =
+    {
+        .name = ITEM_NAME("Green Gummy"),
+        .pluralName = ITEM_PLURAL_NAME("Green Gummies"),
+        .price = (I_PRICE >= GEN_7) ? 10000 : 9800,
+        .description = COMPOUND_STRING(
+            "Raises the base\n"
+            "Sp. Atk stat of one\n"
+            "Pokémon."),
+        .pocket = POCKET_ITEMS,
+        .sortType = ITEM_TYPE_STAT_BOOST_GUMMY,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_Medicine,
+        .effect = gItemEffect_Calcium,
         .flingPower = 10,
         .iconPic = gItemIcon_CloverSweet,
         .iconPalette = gItemIconPalette_CloverSweet,
     },
 
-    [ITEM_FLOWER_SWEET] =
+    [ITEM_YELLOW_GUMMY] =
     {
-        .name = ITEM_NAME("Flower Sweet"),
-        .price = 500 * TREASURE_FACTOR,
+        .name = ITEM_NAME("Yellow Gummy"),
+        .pluralName = ITEM_PLURAL_NAME("Yellow Gummies"),
+        .price = (I_PRICE >= GEN_7) ? 10000 : 9800,
         .description = COMPOUND_STRING(
-            "A flower-shaped\n"
-            "sweet loved by\n"
-            "Milcery."),
+            "Raises the base\n"
+            "Defense stat of\n"
+            "one Pokémon."),
         .pocket = POCKET_ITEMS,
-        .sortType = ITEM_TYPE_EVOLUTION_ITEM,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .flingPower = 10,
-        .iconPic = gItemIcon_FlowerSweet,
-        .iconPalette = gItemIconPalette_FlowerSweet,
-    },
-
-    [ITEM_STAR_SWEET] =
-    {
-        .name = ITEM_NAME("Star Sweet"),
-        .price = 500 * TREASURE_FACTOR,
-        .description = COMPOUND_STRING(
-            "A star-shaped\n"
-            "sweet loved by\n"
-            "Milcery."),
-        .pocket = POCKET_ITEMS,
-        .sortType = ITEM_TYPE_EVOLUTION_ITEM,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .sortType = ITEM_TYPE_STAT_BOOST_GUMMY,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_Medicine,
+        .effect = gItemEffect_Iron,
         .flingPower = 10,
         .iconPic = gItemIcon_StarSweet,
         .iconPalette = gItemIconPalette_StarSweet,
     },
 
-    [ITEM_RIBBON_SWEET] =
+    [ITEM_PURPLE_GUMMY] =
     {
-        .name = ITEM_NAME("Ribbon Sweet"),
-        .price = 500 * TREASURE_FACTOR,
+        .name = ITEM_NAME("Purple Gummy"),
+        .pluralName = ITEM_PLURAL_NAME("Purple Gummies"),
+        .price = (I_PRICE >= GEN_7) ? 10000 : 9800,
         .description = COMPOUND_STRING(
-            "A ribbon-shaped\n"
-            "sweet loved by\n"
-            "Milcery."),
+            "Raises the base\n"
+            "Speed stat of one\n"
+            "Pokémon."),
         .pocket = POCKET_ITEMS,
-        .sortType = ITEM_TYPE_EVOLUTION_ITEM,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .sortType = ITEM_TYPE_STAT_BOOST_GUMMY,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_Medicine,
+        .effect = gItemEffect_Carbos,
         .flingPower = 10,
         .iconPic = gItemIcon_RibbonSweet,
         .iconPalette = gItemIconPalette_RibbonSweet,
+    },
+
+    [ITEM_ORANGE_GUMMY] =
+    {
+        .name = ITEM_NAME("Orange Gummy"),
+        .pluralName = ITEM_PLURAL_NAME("Orange Gummies"),
+        .price = (I_PRICE >= GEN_7) ? 10000 : 9800,
+        .description = COMPOUND_STRING(
+            "Raises the base HP\n"
+            "of one Pokémon."),
+        .pocket = POCKET_ITEMS,
+        .sortType = ITEM_TYPE_STAT_BOOST_DRINK,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_Medicine,
+        .effect = gItemEffect_HPUp,
+        .flingPower = 10,
+        .iconPic = gItemIcon_FlowerSweet,
+        .iconPalette = gItemIconPalette_FlowerSweet,
     },
 
     [ITEM_EVERSTONE] =
@@ -11217,21 +11227,21 @@ const struct ItemInfo gItemsInfo[] =
         .iconPalette = gItemIconPalette_RazzBerry,
     },
 
-    [ITEM_BLUK_BERRY] =
+    [ITEM_GINSENG] =
     {
-        .name = ITEM_NAME("Bluk Berry"),
-        .pluralName = ITEM_PLURAL_NAME("Bluk Berries"),
-        .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
+        .name = ITEM_NAME("Ginseng"),
+        .price = (I_PRICE >= GEN_7) ? 15000 : 7500,
         .description = COMPOUND_STRING(
-            "{POKEBLOCK} ingredient.\n"
-            "Plant in loamy soil\n"
-            "to grow Bluk."),
+            "Raises the PP of a\n"
+            "move to its maximum\n"
+            "points."),
         .pocket = POCKET_BERRIES,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_PPUp,
+        .effect = gItemEffect_PPMax,
         .flingPower = 10,
-        .iconPic = gItemIcon_BlukBerry,
-        .iconPalette = gItemIconPalette_BlukBerry,
+        .iconPic = gItemIcon_EnergyRoot,
+        .iconPalette = gItemIconPalette_EnergyRoot,
     },
 
     [ITEM_NANAB_BERRY] =
@@ -11869,23 +11879,24 @@ const struct ItemInfo gItemsInfo[] =
         .iconPalette = gItemIconPalette_BabiriBerry,
     },
 
-    [ITEM_ROSELI_BERRY] =
+    [ITEM_APPLE] =
     {
-        .name = ITEM_NAME("Roseli Berry"),
-        .pluralName = ITEM_PLURAL_NAME("Roseli Berries"),
-        .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
-        .holdEffect = HOLD_EFFECT_RESIST_BERRY,
-        .holdEffectParam = TYPE_FAIRY,
+        .name = ITEM_NAME("Apple"),
+        .pluralName = ITEM_PLURAL_NAME("Apples"),
+        .price = (I_BERRY_PRICE >= GEN_8) ? 400 : 100,
+        .holdEffectParam = 2,
         .description = COMPOUND_STRING(
-            "A hold item that\n"
-            "weakens a Fairy\n"
-            "move if weak to it."),
+            "Restores the PP\n"
+            "of a selected move\n"
+            "by 2."),
         .pocket = POCKET_BERRIES,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .type = ITEM_USE_PARTY_MENU_MOVES,
+        .fieldUseFunc = ItemUseOutOfBattle_PPRecovery,
+        .battleUsage = EFFECT_ITEM_RESTORE_PP,
+        .effect = gItemEffect_Ether,
         .flingPower = 10,
-        .iconPic = gItemIcon_RoseliBerry,
-        .iconPalette = gItemIconPalette_RoseliBerry,
+        .iconPic = gItemIcon_SweetApple,
+        .iconPalette = gItemIconPalette_SweetApple,
     },
 
     [ITEM_LIECHI_BERRY] =
@@ -12113,40 +12124,47 @@ const struct ItemInfo gItemsInfo[] =
         .iconPalette = gItemIconPalette_RowapBerry,
     },
 
-    [ITEM_KEE_BERRY] =
+    [ITEM_ENERGY_ROOT] =
     {
-        .name = ITEM_NAME("Kee Berry"),
-        .pluralName = ITEM_PLURAL_NAME("Kee Berries"),
-        .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
+        .name = ITEM_NAME("Energy Root"),
+        .pluralName = ITEM_PLURAL_NAME("Energy Roots"),
+        .price = (I_PRICE >= GEN_7) ? 1200 : 800,
         .holdEffect = HOLD_EFFECT_KEE_BERRY,
         .description = COMPOUND_STRING(
-            "If hit by a physical\n"
-            "move, it raises the\n"
-            "Defense a bit."),
+            "A bitter root\n"
+            "that restores HP\n"
+        #if I_HEALTH_RECOVERY >= GEN_7
+            "by 120 points."),
+        #else
+            "by 200 points."),
+        #endif
         .pocket = POCKET_BERRIES,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .flingPower = 10,
-        .iconPic = gItemIcon_KeeBerry,
-        .iconPalette = gItemIconPalette_KeeBerry,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_Medicine,
+        .battleUsage = EFFECT_ITEM_RESTORE_HP,
+        .effect = gItemEffect_EnergyRoot,
+        .flingPower = 30,
+        .iconPic = gItemIcon_EnergyRoot,
+        .iconPalette = gItemIconPalette_EnergyRoot,
     },
 
-    [ITEM_MARANGA_BERRY] =
+    [ITEM_REVIVAL_HERB] =
     {
-        .name = ITEM_NAME("Maranga Berry"),
-        .pluralName = ITEM_PLURAL_NAME("Maranga Berries"),
-        .price = (I_BERRY_PRICE >= GEN_8) ? 80 : 20,
-        .holdEffect = HOLD_EFFECT_MARANGA_BERRY,
+        .name = ITEM_NAME("Revival Herb"),
+        .pluralName = ITEM_PLURAL_NAME("Revival Herbs"),
+        .price = 2800,
         .description = COMPOUND_STRING(
-            "If hit by a special\n"
-            "move, it raises the\n"
-            "Sp. Def. a bit."),
+            "A very bitter herb\n"
+            "that revives a\n"
+            "fainted Pokémon."),
         .pocket = POCKET_BERRIES,
-        .type = ITEM_USE_BAG_MENU,
-        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .flingPower = 10,
-        .iconPic = gItemIcon_MarangaBerry,
-        .iconPalette = gItemIconPalette_MarangaBerry,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_Medicine,
+        .battleUsage = EFFECT_ITEM_REVIVE,
+        .effect = gItemEffect_RevivalHerb,
+        .flingPower = 30,
+        .iconPic = gItemIcon_RevivalHerb,
+        .iconPalette = gItemIconPalette_RevivalHerb,
     },
 
     [ITEM_ENIGMA_BERRY_E_READER] =
@@ -12914,11 +12932,17 @@ const struct ItemInfo gItemsInfo[] =
         .fieldUseFunc = ItemUseOutOfBattle_TMHM,
     },
 
-    [ITEM_TM53] =
+    [ITEM_TM_STONE_EDGE] =
     {
         .name = ITEM_NAME("TM53"),
         .price = 3000,
-        .description = sQuestionMarksDesc, // Todo
+        .description = COMPOUND_STRING(
+            // The user stabs the foe with a sharpened stone from below.
+            // It has a high critical-hit ratio.
+            "The user stabs with\n"
+            "a sharpened stone\n"
+            "for critical damage."
+        ),
         .importance = I_REUSABLE_TMS,
         .pocket = POCKET_TM_HM,
         .type = ITEM_USE_PARTY_MENU,
@@ -15691,7 +15715,7 @@ const struct ItemInfo gItemsInfo[] =
     [ITEM_AUX_EVASION] =
     {
         .name = ITEM_NAME("Aux Evasion"),
-        .price = 800,
+        .price = (I_PRICE >= GEN_7) ? 5000 : 2500,
         .holdEffectParam = X_ITEM_STAGES,
         .description = COMPOUND_STRING(
         #if B_X_ITEMS_BUFF >= GEN_7
@@ -15714,7 +15738,7 @@ const struct ItemInfo gItemsInfo[] =
     [ITEM_AUX_GUARD] =
     {
         .name = ITEM_NAME("Aux Guard"),
-        .price = 400,
+        .price = (I_PRICE >= GEN_7) ? 2700 : 1350,
         .holdEffectParam = X_ITEM_STAGES,
         .description = COMPOUND_STRING(
         #if B_X_ITEMS_BUFF >= GEN_7
@@ -15737,7 +15761,7 @@ const struct ItemInfo gItemsInfo[] =
     [ITEM_AUX_POWER] =
     {
         .name = ITEM_NAME("Aux Power"),
-        .price = 400,
+        .price = (I_PRICE >= GEN_7) ? 2550 : 1250,
         .holdEffectParam = X_ITEM_STAGES,
         .description = COMPOUND_STRING(
         #if B_X_ITEMS_BUFF >= GEN_7
@@ -15760,7 +15784,7 @@ const struct ItemInfo gItemsInfo[] =
     [ITEM_AUX_POWERGUARD] =
     {
         .name = ITEM_NAME("Aux Powerguard"),
-        .price = 1200,
+        .price = (I_PRICE >= GEN_7) ? 7600 : 3800,
         .holdEffectParam = X_ITEM_STAGES,
         .description = COMPOUND_STRING(
         #if B_X_ITEMS_BUFF >= GEN_7
@@ -15835,6 +15859,221 @@ const struct ItemInfo gItemsInfo[] =
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .iconPic = gItemIcon_PokeshiDoll,
         .iconPalette = gItemIconPalette_PokeshiDoll,
+    },
+
+// Food items
+
+    [ITEM_POKE_FOOD] =
+    {
+        .name = ITEM_NAME("Poké Food"),
+        .price = 100,
+        .holdEffectParam = EXP_100,
+        .description = COMPOUND_STRING(
+            "Simple, nutritious\n"
+            "food for Pokémon.\n"
+            "Gives 100 Exp."),
+        .pocket = POCKET_ITEMS,
+        .sortType = ITEM_TYPE_LEVEL_UP_ITEM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_RareCandy,
+        .effect = gItemEffect_GreenTea,
+        .flingPower = 50,
+        .iconPic = gItemIcon_Tea,
+        .iconPalette = gItemIconPalette_Tea,
+    },
+
+    [ITEM_MUFFIN] =
+    {
+        .name = ITEM_NAME("Muffin"),
+        .pluralName = ITEM_PLURAL_NAME("Muffin"),
+        .price = 600,
+        .holdEffectParam = EXP_800,
+        .description = COMPOUND_STRING(
+            "A soft, warm, fluffy\n"
+            "muffin with berries.\n"
+            "Gives 800 Exp."),
+        .pocket = POCKET_ITEMS,
+        .sortType = ITEM_TYPE_LEVEL_UP_ITEM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_RareCandy,
+        .effect = gItemEffect_Muffin,
+        .flingPower = 30,
+        .iconPic = gItemIcon_JubilifeMuffin,
+        .iconPalette = gItemIconPalette_JubilifeMuffin,
+    },
+
+    [ITEM_PASTRY] =
+    {
+        .name = ITEM_NAME("Pastry"),
+        .pluralName = ITEM_PLURAL_NAME("Pastries"),
+        .price = 1200,
+        .holdEffectParam = EXP_3000,
+        .description = COMPOUND_STRING(
+            "A jam-filled pastry.\n"
+            "Gives 3k Exp. Heals\n"
+            "status problems."),
+        .pocket = POCKET_ITEMS,
+        .sortType = ITEM_TYPE_LEVEL_UP_ITEM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_RareCandy,
+        .effect = gItemEffect_Pastry,
+        .flingPower = 30,
+        .iconPic = gItemIcon_BigMalasada,
+        .iconPalette = gItemIconPalette_BigMalasada,
+    },
+
+    [ITEM_CUSTARD] =
+    {
+        .name = ITEM_NAME("Custard"),
+        .pluralName = ITEM_PLURAL_NAME("Custards"),
+        .price = 3300,
+        .holdEffectParam = EXP_10000,
+        .description = COMPOUND_STRING(
+            "Rich, creamy custard\n"
+            "gives 10k Exp. Heals\n"
+            "status problems."),
+        .pocket = POCKET_ITEMS,
+        .sortType = ITEM_TYPE_LEVEL_UP_ITEM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_RareCandy,
+        .effect = gItemEffect_Custard,
+        .flingPower = 30,
+        .iconPic = gItemIcon_MoomooMilk,
+        .iconPalette = gItemIconPalette_MoomooMilk,
+    },
+
+    [ITEM_CUPCAKE] =
+    {
+        .name = ITEM_NAME("Cupcake"),
+        .pluralName = ITEM_PLURAL_NAME("Cupcakes"),
+        .price = 9600,
+        .holdEffectParam = EXP_30000,
+        .description = COMPOUND_STRING(
+            "Delicious cupcake\n"
+            "gives 30k Exp. Heals\n"
+            "status problems."),
+        .pocket = POCKET_ITEMS,
+        .sortType = ITEM_TYPE_LEVEL_UP_ITEM,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_RareCandy,
+        .effect = gItemEffect_Cupcake,
+        .flingPower = 30,
+        .iconPic = gItemIcon_WhippedDream,
+        .iconPalette = gItemIconPalette_WhippedDream,
+    },
+
+    [ITEM_ADZUKI_MOCHI] =
+    {
+        .name = ITEM_NAME("Adzuki Mochi"),
+        .price = 100,
+        .description = COMPOUND_STRING(
+            "Restores the PP\n"
+            "of a selected move\n"
+            "by 5."),
+        .pocket = POCKET_ITEMS,
+        .sortType = ITEM_TYPE_STAT_BOOST_MOCHI,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_ResetEVs,
+        .effect = gItemEffect_MysteryMochi,
+        .flingPower = 30,
+        .iconPic = gItemIcon_Mochi,
+        .iconPalette = gItemIconPalette_FreshStartMochi,
+    },
+
+    [ITEM_MATCHA_MOCHI] =
+    {
+        .name = ITEM_NAME("Matcha Mochi"),
+        .price = 300,
+        .description = COMPOUND_STRING(
+            "Restores the PP\n"
+            "of all moves by 5."),
+        .pocket = POCKET_ITEMS,
+        .sortType = ITEM_TYPE_STAT_BOOST_MOCHI,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_ResetEVs,
+        .effect = gItemEffect_MysteryMochi,
+        .flingPower = 30,
+        .iconPic = gItemIcon_Mochi,
+        .iconPalette = gItemIconPalette_FreshStartMochi,
+    },
+
+    [ITEM_MYSTERY_MOCHI] =
+    {
+        .name = ITEM_NAME("Mystery Mochi"),
+        .price = 500,
+        .description = COMPOUND_STRING(
+            "An item that raises\n"
+            "the base stats of\n"
+            "a Pokémon."),
+        .pocket = POCKET_ITEMS,
+        .sortType = ITEM_TYPE_STAT_BOOST_MOCHI,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_ResetEVs,
+        .effect = gItemEffect_MysteryMochi,
+        .flingPower = 30,
+        .iconPic = gItemIcon_Mochi,
+        .iconPalette = gItemIconPalette_FreshStartMochi,
+    },
+
+    [ITEM_RAW_HONEY] =
+    {
+        .name = ITEM_NAME("Raw Honey"),
+        .price = (I_PRICE >= GEN_7) ? 6000 : 3000,
+        .description = COMPOUND_STRING(
+            "Raises the maximum\n"
+            "PP of a selected\n"
+            "move."),
+        .pocket = POCKET_ITEMS,
+        .sortType = ITEM_TYPE_STAT_BOOST_DRINK,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_PPUp,
+        .effect = gItemEffect_PPUp,
+        .flingPower = 50,
+        .iconPic = gItemIcon_Honey,
+        .iconPalette = gItemIconPalette_Honey,
+    },
+
+    [ITEM_GREEN_TEA] =
+    {
+        .name = ITEM_NAME("Green Tea"),
+        .pluralName = ITEM_PLURAL_NAME("Green Teas"),
+        .price = 100,
+        .holdEffect = HOLD_EFFECT_RESTORE_PCT_HP,
+        .holdEffectParam = 50,
+        .description = COMPOUND_STRING(
+            "Restores a Pokémon\n"
+            "by half its MAX HP\n"
+            "outside of battle."),
+        .pocket = POCKET_ITEMS,
+        .sortType = ITEM_TYPE_HEALTH_RECOVERY,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_Medicine,
+        .effect = gItemEffect_SitrusBerry,
+        .flingPower = 50,
+        .iconPic = gItemIcon_Tea,
+        .iconPalette = gItemIconPalette_Tea,
+    },
+
+    [ITEM_SITRUS_JUICE] =
+    {
+        .name = ITEM_NAME("Sitrus Juice"),
+        .pluralName = ITEM_PLURAL_NAME("Sitrus Juices"),
+        .price = 500,
+        .holdEffect = HOLD_EFFECT_RESTORE_PCT_HP,
+        .holdEffectParam = 50,
+        .description = COMPOUND_STRING(
+            "Restores a Pokémon\n"
+            "by up to half of its\n"
+            "MAX HP."),
+        .pocket = POCKET_ITEMS,
+        .sortType = ITEM_TYPE_HEALTH_RECOVERY,
+        .type = ITEM_USE_PARTY_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_Medicine,
+        .battleUsage = EFFECT_ITEM_RESTORE_HP,
+        .effect = gItemEffect_SitrusBerry,
+        .flingPower = 50,
+        .iconPic = gItemIcon_BerryJuice,
+        .iconPalette = gItemIconPalette_BerryJuice,
     },
 };
 

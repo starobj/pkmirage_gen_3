@@ -17,6 +17,17 @@ ThreeIsland_Mart_Items::
 	.2byte ITEM_HYPER_POTION
 	.2byte ITEM_REVIVE
 	.2byte ITEM_FULL_HEAL
+	.2byte ITEM_ENERGY_POWDER
+	.2byte ITEM_HEAL_POWDER
+	.2byte ITEM_APPLE
+	.2byte ITEM_GINSENG
+	.2byte ITEM_ENERGY_ROOT
+	.2byte ITEM_REVIVAL_HERB
+	.2byte ITEM_HONEY
+	.2byte ITEM_RAW_HONEY
+	.2byte ITEM_GREEN_TEA
+	.2byte ITEM_MUFFIN
+	.2byte ITEM_PASTRY
 	.2byte ITEM_ESCAPE_ROPE
 	.2byte ITEM_MAX_REPEL
 	.2byte ITEM_NONE
@@ -51,4 +62,3 @@ ThreeIsland_Mart_Text_BikersWereAboutToTrashMart::
 	.string "Those BIKERS were about to trash\n"
 	.string "this POKéMON MART.\p"
 	.string "Am I glad they decided to leave!$"
-

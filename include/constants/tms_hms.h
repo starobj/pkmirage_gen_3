@@ -53,7 +53,8 @@
     F(SNATCH) \
     F(OVERHEAT) \
     F(ROOST) \
-    F(FOCUS_BLAST)
+    F(FOCUS_BLAST) \
+    F(STONE_EDGE)
 
 #define FOREACH_HM(F) \
     F(CUT) \

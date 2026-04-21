@@ -261,8 +261,8 @@
       "x": 40,
       "y": 3,
       "elevation": 3,
-      "item": "ITEM_BLUK_BERRY",
-      "flag": "FLAG_HIDDEN_ITEM_ROUTE25_BLUK_BERRY",
+      "item": "ITEM_GINSENG",
+      "flag": "FLAG_HIDDEN_ITEM_ROUTE25_GINSENG",
       "quantity": 1,
       "underfoot": false
     }

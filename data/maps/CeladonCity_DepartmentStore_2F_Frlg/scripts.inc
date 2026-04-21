@@ -50,12 +50,21 @@ CeladonCity_DepartmentStore_2F_EventScript_ClerkTMs::
 
 	.align 2
 CeladonCity_DepartmentStore_2F_TMs::
-	.2byte ITEM_TM05
-	.2byte ITEM_TM15
-	.2byte ITEM_TM28
-	.2byte ITEM_TM31
-	.2byte ITEM_TM43
-	.2byte ITEM_TM45
+	.2byte ITEM_TM_ROAR
+	.2byte ITEM_TM_HYPER_BEAM
+	.2byte ITEM_TM_DIG
+	.2byte ITEM_TM_BRICK_BREAK
+	.2byte ITEM_TM_SECRET_POWER
+	.2byte ITEM_TM_ATTRACT
+	.2byte ITEM_TM_BULLET_SEED
+	.2byte ITEM_TM_FOCUS_PUNCH
+	.2byte ITEM_TM_GIGA_DRAIN
+	.2byte ITEM_TM_IRON_TAIL
+	.2byte ITEM_TM_SHOCK_WAVE
+	.2byte ITEM_TM_SKILL_SWAP
+	.2byte ITEM_TM_SNATCH
+	.2byte ITEM_TM_STEEL_WING
+	.2byte ITEM_TM_WATER_PULSE
 	.2byte ITEM_NONE
 	release
 	end

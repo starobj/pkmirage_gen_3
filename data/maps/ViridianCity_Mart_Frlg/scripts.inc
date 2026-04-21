@@ -66,6 +66,14 @@ ViridianCity_Mart_Items::
 	.2byte ITEM_POTION
 	.2byte ITEM_ANTIDOTE
 	.2byte ITEM_PARALYZE_HEAL
+	.2byte ITEM_ENERGY_POWDER
+	.2byte ITEM_HEAL_POWDER
+	.2byte ITEM_APPLE
+	.2byte ITEM_GINSENG
+	.2byte ITEM_ENERGY_ROOT
+	.2byte ITEM_REVIVAL_HERB
+	.2byte ITEM_RAW_HONEY
+	.2byte ITEM_GREEN_TEA
 	.2byte ITEM_NONE
 	release
 	end
@@ -108,4 +116,3 @@ ViridianCity_Mart_Text_GotToBuySomePotions::
 	.string "I've got to buy some POTIONS.\p"
 	.string "You never know when your POKéMON\n"
 	.string "will need quick healing.$"
-

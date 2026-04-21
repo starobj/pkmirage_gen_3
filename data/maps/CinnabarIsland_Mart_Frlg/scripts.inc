@@ -26,6 +26,10 @@ CinnabarIsland_Mart_Items::
 	.2byte ITEM_HYPER_POTION
 	.2byte ITEM_REVIVE
 	.2byte ITEM_FULL_HEAL
+	.2byte ITEM_APPLE
+	.2byte ITEM_GREEN_TEA
+	.2byte ITEM_PASTRY
+	.2byte ITEM_CUSTARD
 	.2byte ITEM_ESCAPE_ROPE
 	.2byte ITEM_MAX_REPEL
 	.2byte ITEM_NONE
@@ -40,4 +44,3 @@ CinnabarIsland_Mart_Text_DontTheyHaveXAttack::
 CinnabarIsland_Mart_Text_ExtraItemsNeverHurt::
 	.string "It never hurts to have extra items.\n"
 	.string "You never know what might happen.$"
-

@@ -54,6 +54,10 @@ CeladonCity_DepartmentStore_5F_Vitamins::
 	.2byte ITEM_CALCIUM
 	.2byte ITEM_ZINC
 	.2byte ITEM_CARBOS
+	.2byte ITEM_EXP_CANDY_XS
+	.2byte ITEM_EXP_CANDY_S
+	.2byte ITEM_EXP_CANDY_M
+	.2byte ITEM_EXP_CANDY_L
 	.2byte ITEM_NONE
 	release
 	end
@@ -80,4 +84,3 @@ CeladonCity_DepartmentStore_5F_Text_HereForStatEnhancers::
 
 CeladonCity_DepartmentStore_5F_Text_Drugstore::
 	.string "5F: DRUGSTORE$"
-

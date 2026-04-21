@@ -133,6 +133,14 @@ TrainerTower_Lobby_Mart_Items::
 	.2byte ITEM_HYPER_POTION
 	.2byte ITEM_REVIVE
 	.2byte ITEM_FULL_HEAL
+	.2byte ITEM_APPLE
+	.2byte ITEM_GREEN_TEA
+	.2byte ITEM_PASTRY
+	.2byte ITEM_CUSTARD
+	.2byte ITEM_CUPCAKE
+	.2byte ITEM_MYSTERY_MOCHI
+	.2byte ITEM_RAW_HONEY
+	.2byte ITEM_GINSENG
 	.2byte ITEM_ESCAPE_ROPE
 	.2byte ITEM_MAX_REPEL
 	.2byte ITEM_NONE
@@ -339,4 +347,3 @@ TrainerTower_Lobby_Text_StairsTougherThanAnyBattle::
 	.string "Gasp…\p"
 	.string "Never mind battling! These stairs…\n"
 	.string "They're tougher than any battle…$"
-

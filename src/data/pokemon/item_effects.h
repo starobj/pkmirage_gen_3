@@ -223,6 +223,22 @@ const u8 gItemEffect_Zinc[11] = {
     [10] = ITEM10_IS_VITAMIN,
 };
 
+const u8 gItemEffect_Fertility[11] = {
+    [1] = ITEM1_FERTILITY,
+    [5] = ITEM5_FRIENDSHIP_ALL,
+    [6] = ITEM6_ADD_EV,
+    VITAMIN_FRIENDSHIP_CHANGE(7),
+    [10] = ITEM10_IS_VITAMIN,
+};
+
+const u8 gItemEffect_Infertility[11] = {
+    [1] = ITEM1_FERTILITY,
+    [5] = ITEM5_FRIENDSHIP_ALL,
+    [6] = ITEM6_SUBTRACT_EV,
+    VITAMIN_FRIENDSHIP_CHANGE(7),
+    [10] = ITEM10_IS_VITAMIN,
+};
+
 #define FEATHER_FRIENDSHIP_CHANGE(i)             \
     [(i) + 0] = 3, /* Friendship change, low */  \
     [(i) + 1] = 2, /* Friendship change, mid */  \
@@ -315,9 +331,65 @@ const u8 gItemEffect_ResetMochi[11] = {
     [10] = 0,
 };
 
-const u8 gItemEffect_RareCandy[10] = {
+const u8 gItemEffect_Apple[10] = {
+    [5] = ITEM5_FRIENDSHIP_ALL,
+    VITAMIN_FRIENDSHIP_CHANGE(7),
+};
+
+const u8 gItemEffect_GreenTea[10] = {
     [3] = ITEM3_LEVEL_UP,
     [4] = ITEM4_REVIVE | ITEM4_HEAL_HP,
+    [5] = ITEM5_FRIENDSHIP_ALL,
+    [6] = ITEM6_HEAL_HP_LVL_UP,
+    VITAMIN_FRIENDSHIP_CHANGE(7),
+};
+
+const u8 gItemEffect_Muffin[10] = {
+    [3] = ITEM3_LEVEL_UP,
+    [4] = ITEM4_REVIVE | ITEM4_HEAL_HP,
+    [5] = ITEM5_FRIENDSHIP_ALL,
+    [6] = ITEM6_HEAL_HP_LVL_UP,
+    VITAMIN_FRIENDSHIP_CHANGE(7),
+};
+
+const u8 gItemEffect_Pastry[10] = {
+    [3] = ITEM3_LEVEL_UP,
+    [4] = ITEM4_REVIVE | ITEM4_HEAL_HP | ITEM3_STATUS_ALL,
+    [5] = ITEM5_FRIENDSHIP_ALL,
+    [6] = ITEM6_HEAL_HP_LVL_UP,
+    VITAMIN_FRIENDSHIP_CHANGE(7),
+};
+
+const u8 gItemEffect_Custard[10] = {
+    [0] = 1 << 5, // ITEM0_DIRE_HIT
+    [3] = ITEM3_LEVEL_UP,
+    [4] = ITEM4_REVIVE | ITEM4_HEAL_HP | ITEM3_STATUS_ALL | ITEM3_GUARD_SPEC,
+    [5] = ITEM5_FRIENDSHIP_ALL,
+    [6] = ITEM6_HEAL_HP_LVL_UP,
+    VITAMIN_FRIENDSHIP_CHANGE(7),
+};
+
+const u8 gItemEffect_Cupcake[10] = {
+    [0] = 1 << 5, // ITEM0_DIRE_HIT
+    [1] = ITEM1_X_ACCURACY,
+    [3] = ITEM3_LEVEL_UP,
+    [4] = ITEM4_REVIVE | ITEM4_HEAL_HP | ITEM3_STATUS_ALL | ITEM3_GUARD_SPEC,
+    [5] = ITEM5_FRIENDSHIP_ALL,
+    [6] = ITEM6_HEAL_HP_LVL_UP,
+    VITAMIN_FRIENDSHIP_CHANGE(7),
+};
+
+const u8 gItemEffect_MysteryMochi[11] = {
+    [4] = ITEM4_EV_HP | ITEM4_EV_ATK,
+    [5] = ITEM5_EV_DEF | ITEM5_EV_SPATK | ITEM5_EV_SPDEF | ITEM5_EV_SPEED | ITEM5_FRIENDSHIP_ALL,
+    [6] = ITEM6_ADD_ONE_EV,
+    VITAMIN_FRIENDSHIP_CHANGE(7),
+    [10] = 0,
+};
+
+const u8 gItemEffect_RareCandy[10] = {
+    [3] = ITEM3_LEVEL_UP,
+    [4] = ITEM4_REVIVE | ITEM4_HEAL_HP | ITEM3_STATUS_ALL | ITEM3_GUARD_SPEC,
     [5] = ITEM5_FRIENDSHIP_ALL,
     [6] = ITEM6_HEAL_HP_LVL_UP,
     VITAMIN_FRIENDSHIP_CHANGE(7),
@@ -341,6 +413,22 @@ const u8 gItemEffect_GuardSpec[8] = {
 // The first item effect value for the stat boost items
 // only uses the least significant bit of its full mask.
 // The full constant is commented next to it
+
+const u8 gItemEffect_AuxEvasion[8] = {
+    [1] = ITEM1_AUX_EVASION,
+};
+
+const u8 gItemEffect_AuxGuard[8] = {
+    [1] = ITEM1_AUX_GUARD,
+};
+
+const u8 gItemEffect_AuxPower[8] = {
+    [1] = ITEM1_AUX_POWER,
+};
+
+const u8 gItemEffect_AuxPowerguard[8] = {
+    [1] = ITEM1_AUX_POWERGUARD,
+};
 
 const u8 gItemEffect_DireHit[8] = {
     [0] = 1 << 5, // ITEM0_DIRE_HIT

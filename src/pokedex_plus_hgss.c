@@ -6423,7 +6423,7 @@ bool32 IsSpeciesAlcremie(u32 targetSpecies)
 
 bool32 IsItemSweet(enum Item item)
 {
-    return item >= ITEM_STRAWBERRY_SWEET && item <= ITEM_RIBBON_SWEET;
+    return item >= ITEM_RED_GUMMY && item <= ITEM_PURPLE_GUMMY;
 }
 
 static void PrintEvolutionTargetSpeciesAndMethod(u8 taskId, u16 species, u8 depth, u32 *depth_i, u32 alreadyPrintedIcons[], u32 *icon_depth_i, u32 numLines)

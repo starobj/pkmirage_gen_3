@@ -52,7 +52,7 @@ After you created your new item, simply expand the `ApricornType` enum in `inclu
 enum ApricornType
 {
     [...]
-    APRICORN_BERRY_MARANGA = ITEM_MARANGA_BERRY,
+    APRICORN_BERRY_MARANGA = ITEM_REVIVAL_HERB,
 +    APRICORN_BROWN         = ITEM_BROWN_APRICORN,
 };
 ```

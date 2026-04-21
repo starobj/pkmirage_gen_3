@@ -66,37 +66,83 @@ LilycoveCity_DepartmentStoreRooftop_EventScript_ThirstyMan::
 
 LilycoveCity_DepartmentStoreRooftop_EventScript_VendingMachine::
 	lockall
-	message LilycoveCity_DepartmentStoreRooftop_Text_WhichDrinkWouldYouLike
+	message LilycoveCity_DepartmentStoreRooftop_Text_WhichItemWouldYouLike
 	waitmessage
 	showmoneybox 0, 0
-	goto LilycoveCity_DepartmentStoreRooftop_EventScript_ChooseDrink
+	goto LilycoveCity_DepartmentStoreRooftop_EventScript_ChooseItem
 	end
 
-LilycoveCity_DepartmentStoreRooftop_EventScript_ChooseDrink::
+LilycoveCity_DepartmentStoreRooftop_EventScript_ChooseItem::
 	multichoice 16, 0, MULTI_VENDING_MACHINE, FALSE
 	copyvar VAR_TEMP_1, VAR_RESULT
 	switch VAR_TEMP_1
 	case 0, LilycoveCity_DepartmentStoreRooftop_EventScript_FreshWater
 	case 1, LilycoveCity_DepartmentStoreRooftop_EventScript_SodaPop
 	case 2, LilycoveCity_DepartmentStoreRooftop_EventScript_Lemonade
-	msgbox LilycoveCity_DepartmentStoreRooftop_Text_DecidedAgainstBuyingDrink, MSGBOX_DEFAULT
+	case 3, LilycoveCity_DepartmentStoreRooftop_EventScript_GreenTea
+	case 4, LilycoveCity_DepartmentStoreRooftop_EventScript_Apple
+	case 5, LilycoveCity_DepartmentStoreRooftop_EventScript_AdzukiMochi
+	case 6, LilycoveCity_DepartmentStoreRooftop_EventScript_MatchaMochi
+	case 7, LilycoveCity_DepartmentStoreRooftop_EventScript_MysteryMochi
+	case 8, LilycoveCity_DepartmentStoreRooftop_EventScript_Muffin
+	case 9, LilycoveCity_DepartmentStoreRooftop_EventScript_Pastry
+	msgbox LilycoveCity_DepartmentStoreRooftop_Text_DecidedAgainstBuyingItem, MSGBOX_DEFAULT
 	goto LilycoveCity_DepartmentStoreRooftop_EventScript_ExitVendingMachine
+	end
+
+LilycoveCity_DepartmentStoreRooftop_EventScript_GreenTea::
+	setvar VAR_TEMP_0, ITEM_GREEN_TEA
+	goto LilycoveCity_DepartmentStoreRooftop_EventScript_TryBuyItem
 	end
 
 LilycoveCity_DepartmentStoreRooftop_EventScript_FreshWater::
 	setvar VAR_TEMP_0, ITEM_FRESH_WATER
-	goto LilycoveCity_DepartmentStoreRooftop_EventScript_TryBuyDrink
+	goto LilycoveCity_DepartmentStoreRooftop_EventScript_TryBuyItem
 	end
 
 LilycoveCity_DepartmentStoreRooftop_EventScript_SodaPop::
 	setvar VAR_TEMP_0, ITEM_SODA_POP
-	goto LilycoveCity_DepartmentStoreRooftop_EventScript_TryBuyDrink
+	goto LilycoveCity_DepartmentStoreRooftop_EventScript_TryBuyItem
 	end
 
 LilycoveCity_DepartmentStoreRooftop_EventScript_Lemonade::
 	setvar VAR_TEMP_0, ITEM_LEMONADE
-	goto LilycoveCity_DepartmentStoreRooftop_EventScript_TryBuyDrink
+	goto LilycoveCity_DepartmentStoreRooftop_EventScript_TryBuyItem
 	end
+
+LilycoveCity_DepartmentStoreRooftop_EventScript_Apple::
+	setvar VAR_TEMP_0, ITEM_APPLE
+	goto LilycoveCity_DepartmentStoreRooftop_EventScript_TryBuyItem
+	end
+
+LilycoveCity_DepartmentStoreRooftop_EventScript_AdzukiMochi::
+	setvar VAR_TEMP_0, ITEM_ADZUKI_MOCHI
+	goto LilycoveCity_DepartmentStoreRooftop_EventScript_TryBuyItem
+	end
+
+LilycoveCity_DepartmentStoreRooftop_EventScript_MatchaMochi::
+	setvar VAR_TEMP_0, ITEM_MATCHA_MOCHI
+	goto LilycoveCity_DepartmentStoreRooftop_EventScript_TryBuyItem
+	end
+
+LilycoveCity_DepartmentStoreRooftop_EventScript_MysteryMochi::
+	setvar VAR_TEMP_0, ITEM_MYSTERY_MOCHI
+	goto LilycoveCity_DepartmentStoreRooftop_EventScript_TryBuyItem
+	end
+
+LilycoveCity_DepartmentStoreRooftop_EventScript_Muffin::
+	setvar VAR_TEMP_0, ITEM_MUFFIN
+	goto LilycoveCity_DepartmentStoreRooftop_EventScript_TryBuyItem
+	end
+
+LilycoveCity_DepartmentStoreRooftop_EventScript_Pastry::
+	setvar VAR_TEMP_0, ITEM_PASTRY
+	goto LilycoveCity_DepartmentStoreRooftop_EventScript_TryBuyItem
+	end
+
+LilycoveCity_DepartmentStoreRooftop_EventScript_CheckMoneyGreenTea::
+	checkmoney 100
+	return
 
 LilycoveCity_DepartmentStoreRooftop_EventScript_CheckMoneyFreshWater::
 	checkmoney 200
@@ -108,6 +154,34 @@ LilycoveCity_DepartmentStoreRooftop_EventScript_CheckMoneySodaPop::
 
 LilycoveCity_DepartmentStoreRooftop_EventScript_CheckMoneyLemonade::
 	checkmoney 350
+	return
+
+LilycoveCity_DepartmentStoreRooftop_EventScript_CheckMoneyApple::
+	checkmoney 50
+	return
+
+LilycoveCity_DepartmentStoreRooftop_EventScript_CheckMoneyAdzukiMochi::
+	checkmoney 100
+	return
+
+LilycoveCity_DepartmentStoreRooftop_EventScript_CheckMoneyMatchaMochi::
+	checkmoney 300
+	return
+
+LilycoveCity_DepartmentStoreRooftop_EventScript_CheckMoneyMysteryMochi::
+	checkmoney 600
+	return
+
+LilycoveCity_DepartmentStoreRooftop_EventScript_CheckMoneyMuffin::
+	checkmoney 600
+	return
+
+LilycoveCity_DepartmentStoreRooftop_EventScript_CheckMoneyPastry::
+	checkmoney 1200
+	return
+
+LilycoveCity_DepartmentStoreRooftop_EventScript_RemoveMoneyGreenTea::
+	removemoney 100
 	return
 
 LilycoveCity_DepartmentStoreRooftop_EventScript_RemoveMoneyFreshWater::
@@ -122,59 +196,97 @@ LilycoveCity_DepartmentStoreRooftop_EventScript_RemoveMoneyLemonade::
 	removemoney 350
 	return
 
-LilycoveCity_DepartmentStoreRooftop_EventScript_TryBuyDrink::
-	call_if_eq VAR_TEMP_1, 0, LilycoveCity_DepartmentStoreRooftop_EventScript_CheckMoneyFreshWater
-	call_if_eq VAR_TEMP_1, 1, LilycoveCity_DepartmentStoreRooftop_EventScript_CheckMoneySodaPop
-	call_if_eq VAR_TEMP_1, 2, LilycoveCity_DepartmentStoreRooftop_EventScript_CheckMoneyLemonade
-	goto_if_eq VAR_RESULT, FALSE, LilycoveCity_DepartmentStoreRooftop_EventScript_NotEnoughMoneyForDrink
+LilycoveCity_DepartmentStoreRooftop_EventScript_RemoveMoneyApple::
+	removemoney 50
+	return
+
+LilycoveCity_DepartmentStoreRooftop_EventScript_RemoveMoneyAdzukiMochi::
+	removemoney 100
+	return
+
+LilycoveCity_DepartmentStoreRooftop_EventScript_RemoveMoneyMatchaMochi::
+	removemoney 300
+	return
+
+LilycoveCity_DepartmentStoreRooftop_EventScript_RemoveMoneyMysteryMochi::
+	removemoney 600
+	return
+
+LilycoveCity_DepartmentStoreRooftop_EventScript_RemoveMoneyMuffin::
+	removemoney 600
+	return
+
+LilycoveCity_DepartmentStoreRooftop_EventScript_RemoveMoneyPastry::
+	removemoney 1200
+	return
+
+LilycoveCity_DepartmentStoreRooftop_EventScript_TryBuyItem::
+	call_if_eq VAR_TEMP_1, 0, LilycoveCity_DepartmentStoreRooftop_EventScript_CheckMoneyGreenTea
+	call_if_eq VAR_TEMP_1, 1, LilycoveCity_DepartmentStoreRooftop_EventScript_CheckMoneyFreshWater
+	call_if_eq VAR_TEMP_1, 2, LilycoveCity_DepartmentStoreRooftop_EventScript_CheckMoneySodaPop
+	call_if_eq VAR_TEMP_1, 3, LilycoveCity_DepartmentStoreRooftop_EventScript_CheckMoneyLemonade
+	call_if_eq VAR_TEMP_1, 4, LilycoveCity_DepartmentStoreRooftop_EventScript_CheckMoneyApple
+	call_if_eq VAR_TEMP_1, 5, LilycoveCity_DepartmentStoreRooftop_EventScript_CheckMoneyAdzukiMochi
+	call_if_eq VAR_TEMP_1, 6, LilycoveCity_DepartmentStoreRooftop_EventScript_CheckMoneyMatchaMochi
+	call_if_eq VAR_TEMP_1, 7, LilycoveCity_DepartmentStoreRooftop_EventScript_CheckMoneyMysteryMochi
+	call_if_eq VAR_TEMP_1, 8, LilycoveCity_DepartmentStoreRooftop_EventScript_CheckMoneyMuffin
+	call_if_eq VAR_TEMP_1, 9, LilycoveCity_DepartmentStoreRooftop_EventScript_CheckMoneyPastry
+	goto_if_eq VAR_RESULT, FALSE, LilycoveCity_DepartmentStoreRooftop_EventScript_NotEnoughMoneyForItem
 	checkitemspace VAR_TEMP_0
-	goto_if_eq VAR_RESULT, FALSE, LilycoveCity_DepartmentStoreRooftop_EventScript_NoRoomForDrink
-	call_if_eq VAR_TEMP_1, 0, LilycoveCity_DepartmentStoreRooftop_EventScript_RemoveMoneyFreshWater
-	call_if_eq VAR_TEMP_1, 1, LilycoveCity_DepartmentStoreRooftop_EventScript_RemoveMoneySodaPop
-	call_if_eq VAR_TEMP_1, 2, LilycoveCity_DepartmentStoreRooftop_EventScript_RemoveMoneyLemonade
+	goto_if_eq VAR_RESULT, FALSE, LilycoveCity_DepartmentStoreRooftop_EventScript_NoRoomForItem
+	call_if_eq VAR_TEMP_1, 0, LilycoveCity_DepartmentStoreRooftop_EventScript_RemoveMoneyGreenTea
+	call_if_eq VAR_TEMP_1, 1, LilycoveCity_DepartmentStoreRooftop_EventScript_RemoveMoneyFreshWater
+	call_if_eq VAR_TEMP_1, 2, LilycoveCity_DepartmentStoreRooftop_EventScript_RemoveMoneySodaPop
+	call_if_eq VAR_TEMP_1, 3, LilycoveCity_DepartmentStoreRooftop_EventScript_RemoveMoneyLemonade
+	call_if_eq VAR_TEMP_1, 4, LilycoveCity_DepartmentStoreRooftop_EventScript_RemoveMoneyApple
+	call_if_eq VAR_TEMP_1, 5, LilycoveCity_DepartmentStoreRooftop_EventScript_RemoveMoneyAdzukiMochi
+	call_if_eq VAR_TEMP_1, 6, LilycoveCity_DepartmentStoreRooftop_EventScript_RemoveMoneyMatchaMochi
+	call_if_eq VAR_TEMP_1, 7, LilycoveCity_DepartmentStoreRooftop_EventScript_RemoveMoneyMysteryMochi
+	call_if_eq VAR_TEMP_1, 8, LilycoveCity_DepartmentStoreRooftop_EventScript_RemoveMoneyMuffin
+	call_if_eq VAR_TEMP_1, 9, LilycoveCity_DepartmentStoreRooftop_EventScript_RemoveMoneyPastry
 	updatemoneybox
 	bufferitemname STR_VAR_1, VAR_TEMP_0
 	playse SE_VEND
-	msgbox LilycoveCity_DepartmentStoreRooftop_Text_CanOfDrinkDroppedDown, MSGBOX_DEFAULT
+	msgbox LilycoveCity_DepartmentStoreRooftop_Text_ItemOfItemDroppedDown, MSGBOX_DEFAULT
 	additem VAR_TEMP_0
 	bufferitemname STR_VAR_2, VAR_TEMP_0
 	bufferstdstring STR_VAR_3, STDSTRING_ITEMS
 	msgbox gText_PutItemInPocket, MSGBOX_DEFAULT
-	random 64  @ 1/64 chance of an additional drink dropping
-	goto_if_ne VAR_RESULT, 0, LilycoveCity_DepartmentStoreRooftop_EventScript_ChooseNewDrink
+	random 64  @ 1/64 chance of an additional Item dropping
+	goto_if_ne VAR_RESULT, 0, LilycoveCity_DepartmentStoreRooftop_EventScript_ChooseNewItem
 	checkitemspace VAR_TEMP_0
-	goto_if_eq VAR_RESULT, FALSE, LilycoveCity_DepartmentStoreRooftop_EventScript_NoRoomForDrink
+	goto_if_eq VAR_RESULT, FALSE, LilycoveCity_DepartmentStoreRooftop_EventScript_NoRoomForItem
 	playse SE_VEND
-	msgbox LilycoveCity_DepartmentStoreRooftop_Text_ExtraCanOfDrinkDroppedDown, MSGBOX_DEFAULT
+	msgbox LilycoveCity_DepartmentStoreRooftop_Text_ExtraItemOfItemDroppedDown, MSGBOX_DEFAULT
 	additem VAR_TEMP_0
 	bufferitemname STR_VAR_2, VAR_TEMP_0
 	bufferstdstring STR_VAR_3, STDSTRING_ITEMS
 	msgbox gText_PutItemInPocket, MSGBOX_DEFAULT
-	random 64  @ 1/64 * the prev 1/64 chance of a third additional drink dropping, ~ 0.02% chance
-	goto_if_ne VAR_RESULT, 0, LilycoveCity_DepartmentStoreRooftop_EventScript_ChooseNewDrink
+	random 64  @ 1/64 * the prev 1/64 chance of a third additional Item dropping, ~ 0.02% chance
+	goto_if_ne VAR_RESULT, 0, LilycoveCity_DepartmentStoreRooftop_EventScript_ChooseNewItem
 	checkitemspace VAR_TEMP_0
-	goto_if_eq VAR_RESULT, 0, LilycoveCity_DepartmentStoreRooftop_EventScript_NoRoomForDrink
+	goto_if_eq VAR_RESULT, 0, LilycoveCity_DepartmentStoreRooftop_EventScript_NoRoomForItem
 	playse SE_VEND
-	msgbox LilycoveCity_DepartmentStoreRooftop_Text_ExtraCanOfDrinkDroppedDown, MSGBOX_DEFAULT
+	msgbox LilycoveCity_DepartmentStoreRooftop_Text_ExtraItemOfItemDroppedDown, MSGBOX_DEFAULT
 	additem VAR_TEMP_0
 	bufferitemname STR_VAR_2, VAR_TEMP_0
 	bufferstdstring STR_VAR_3, STDSTRING_ITEMS
 	msgbox gText_PutItemInPocket, MSGBOX_DEFAULT
-	goto LilycoveCity_DepartmentStoreRooftop_EventScript_ChooseNewDrink
+	goto LilycoveCity_DepartmentStoreRooftop_EventScript_ChooseNewItem
 	end
 
-LilycoveCity_DepartmentStoreRooftop_EventScript_ChooseNewDrink::
-	message LilycoveCity_DepartmentStoreRooftop_Text_WhichDrinkWouldYouLike
+LilycoveCity_DepartmentStoreRooftop_EventScript_ChooseNewItem::
+	message LilycoveCity_DepartmentStoreRooftop_Text_WhichItemWouldYouLike
 	waitmessage
-	goto LilycoveCity_DepartmentStoreRooftop_EventScript_ChooseDrink
+	goto LilycoveCity_DepartmentStoreRooftop_EventScript_ChooseItem
 	end
 
-LilycoveCity_DepartmentStoreRooftop_EventScript_NotEnoughMoneyForDrink::
+LilycoveCity_DepartmentStoreRooftop_EventScript_NotEnoughMoneyForItem::
 	msgbox LilycoveCity_DepartmentStoreRooftop_Text_NotEnoughMoney, MSGBOX_DEFAULT
 	goto LilycoveCity_DepartmentStoreRooftop_EventScript_ExitVendingMachine
 	end
 
-LilycoveCity_DepartmentStoreRooftop_EventScript_NoRoomForDrink::
+LilycoveCity_DepartmentStoreRooftop_EventScript_NoRoomForItem::
 	msgbox gText_TheBagIsFull, MSGBOX_DEFAULT
 	goto LilycoveCity_DepartmentStoreRooftop_EventScript_ExitVendingMachine
 	end
@@ -199,21 +311,21 @@ LilycoveCity_DepartmentStoreRooftop_Text_BeenWaitingForClearOutSale:
 LilycoveCity_DepartmentStoreRooftop_Text_BoneDryThirsty:
 	.string "Ohh… I'm bone-dry thirsty!$"
 
-LilycoveCity_DepartmentStoreRooftop_Text_WhichDrinkWouldYouLike:
+LilycoveCity_DepartmentStoreRooftop_Text_WhichItemWouldYouLike:
 	.string "It's a VENDING MACHINE.\n"
-	.string "Which drink would you like?$"
+	.string "Which item would you like?$"
 
-LilycoveCity_DepartmentStoreRooftop_Text_CanOfDrinkDroppedDown:
+LilycoveCity_DepartmentStoreRooftop_Text_ItemOfItemDroppedDown:
 	.string "Clang!\p"
-	.string "A can of {STR_VAR_1} dropped down.$"
+	.string "{STR_VAR_1} dropped down.$"
 
-LilycoveCity_DepartmentStoreRooftop_Text_ExtraCanOfDrinkDroppedDown:
+LilycoveCity_DepartmentStoreRooftop_Text_ExtraItemOfItemDroppedDown:
 	.string "Clang!\p"
-	.string "Score! An extra can of {STR_VAR_1}\n"
+	.string "Score! An extra {STR_VAR_1}\n"
 	.string "dropped down!$"
 
 LilycoveCity_DepartmentStoreRooftop_Text_NotEnoughMoney:
 	.string "Not enough money…$"
 
-LilycoveCity_DepartmentStoreRooftop_Text_DecidedAgainstBuyingDrink:
-	.string "Decided against buying a drink.$"
+LilycoveCity_DepartmentStoreRooftop_Text_DecidedAgainstBuyingItem:
+	.string "Decided against buying an item.$"

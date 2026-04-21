@@ -27,6 +27,12 @@ VermilionCity_Mart_Items::
 	.2byte ITEM_PARALYZE_HEAL
 	.2byte ITEM_AWAKENING
 	.2byte ITEM_ICE_HEAL
+	.2byte ITEM_APPLE
+	.2byte ITEM_GREEN_TEA
+	.2byte ITEM_MUFFIN
+	.2byte ITEM_PASTRY
+	.2byte ITEM_RAW_HONEY
+	.2byte ITEM_GINSENG
 	.2byte ITEM_REPEL
 	.2byte ITEM_NONE
 	release
@@ -45,4 +51,3 @@ VermilionCity_Mart_Text_TeamRocketAreWickedPeople::
 VermilionCity_Mart_Text_MonsGoodOrBadDependingOnTrainer::
 	.string "I think POKéMON can be good or\n"
 	.string "bad. It depends on the TRAINER.$"
-

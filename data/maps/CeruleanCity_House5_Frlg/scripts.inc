@@ -242,4 +242,3 @@ CeruleanCity_House1_Text_HopeToSeeYouAgain::
 CeruleanCity_House1_Text_SeeMeIfYoudLikeToTradePowder::
 	.string "Come see me if you'd like to trade\n"
 	.string "your BERRY POWDER.$"
-

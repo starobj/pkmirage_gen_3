@@ -19,6 +19,10 @@ FourIsland_Mart_Items::
 	.2byte ITEM_REVIVE
 	.2byte ITEM_ICE_HEAL
 	.2byte ITEM_FULL_HEAL
+	.2byte ITEM_APPLE
+	.2byte ITEM_GREEN_TEA
+	.2byte ITEM_PASTRY
+	.2byte ITEM_CUSTARD
 	.2byte ITEM_ESCAPE_ROPE
 	.2byte ITEM_MAX_REPEL
 	.2byte ITEM_NONE
@@ -44,4 +48,3 @@ FourIsland_Mart_Text_IcefallCaveIsFrigid::
 	.string "need to know about.\p"
 	.string "The ICEFALL CAVE is frigid because\n"
 	.string "of the POKéMON that live in it.$"
-

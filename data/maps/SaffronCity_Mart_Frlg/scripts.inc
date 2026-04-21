@@ -25,6 +25,9 @@ SaffronCity_Mart_Items::
 	.2byte ITEM_HYPER_POTION
 	.2byte ITEM_REVIVE
 	.2byte ITEM_FULL_HEAL
+	.2byte ITEM_APPLE
+	.2byte ITEM_GREEN_TEA
+	.2byte ITEM_PASTRY
 	.2byte ITEM_ESCAPE_ROPE
 	.2byte ITEM_MAX_REPEL
 	.2byte ITEM_NONE
@@ -40,4 +43,3 @@ SaffronCity_Mart_Text_MaxRepelMoreEffectiveThanSuper::
 SaffronCity_Mart_Text_ReviveIsCostly::
 	.string "REVIVE is costly, but it revives\n"
 	.string "fainted POKéMON!$"
-
